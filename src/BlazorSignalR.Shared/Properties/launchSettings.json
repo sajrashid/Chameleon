@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "BlazorSignalR.Shared": {
+      "commandName": "Project",
+      "nativeDebugging": true
+    }
+  }
+}
