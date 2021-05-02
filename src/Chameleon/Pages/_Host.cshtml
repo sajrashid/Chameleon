@@ -6,7 +6,7 @@
 }
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="dark">
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -14,11 +14,14 @@
     <base href="~/" />
     <link href="css/site.css" rel="stylesheet" />
     <script>
-        window.changeThemeMode = (cssClass) => {
-            document.getElementsByTagName("body")[0].className = cssClass
+        window.plum = (cssClass) => {
+            var selector = document.getElementsByTagName('html')[0];
+            selector.setAttribute('data-theme', cssClass);
         }
     </script>
-    <script src="_content/BlazorInputFile/inputfile.js"></script>
+    <script src="_cdcontent/BlazorInputFile/inputfile.js"></script>
+    <script src="~/js/my_lib.js"></script>
+
 </head>
 <body>
     <component type="typeof(App)" render-mode="ServerPrerendered" />
@@ -35,5 +38,7 @@
     </div>
 
     <script src="_framework/blazor.server.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.4/dist/Chart.min.js"></script>
+    <script src="_content/ChartJs.Blazor.Fork/ChartJsBlazorInterop.js"></script>
 </body>
 </html>

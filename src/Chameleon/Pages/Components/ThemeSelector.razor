@@ -1,0 +1,92 @@
+﻿@page "/themeSelector"
+@inject IJSRuntime JS
+
+
+
+
+
+
+<select data-choose-theme="" class="w-full select bg-base-300 text-base-content" value="@Value" @onchange="OnValueChanged">
+
+    <option value=""></option>
+    @foreach (var country in CountryList)
+    {
+        <option value="@country.Code"> @country.Name </option>
+    }
+    }
+</select>
+
+
+
+<p>@SelectedCountryID</p>
+
+@code {
+
+
+    [Parameter]
+    public EventCallback<string> ValueChanged { get; set; }
+
+    [Parameter]
+    public string Value { get; set; }
+
+    public async Task OnValueChanged(ChangeEventArgs e)
+    {
+        Value = e.Value.ToString();
+        await ValueChanged.InvokeAsync(Value);
+        await JS.InvokeAsync<object>("plum", Value);
+    }
+
+
+
+    public string selectedCountryID { get; set; }
+
+    string SelectedCountryID
+    {
+        get => selectedCountryID;
+        set
+        {
+            selectedCountryID = value;
+
+        }
+    }
+
+
+    List<Country> CountryList = new List<Country>()
+{
+        new Country ("auto", "theme: 🎨 auto"),
+        new Country ("light", "theme: 🌝 light"),
+        new Country ("dark", "theme: 🌚 dark"),
+        new Country ("valentine", "theme: 🌸 valentine"),
+        new Country ("retro", "theme: 👴 retro"),
+        new Country ("synthwave", "theme: 🌃 synthwave"),
+        new Country ("cyberpunk", "theme: 🤖 cyberpunk"),
+        new Country ("black", "theme: 🏴 black"),
+        new Country ("dracula", "theme: 🧛‍♂️ dracula"),
+        new Country ("garden", "theme: 🌷 garden"),
+        new Country ("halloween", "theme: 🎃 halloween"),
+        new Country ("aqua", "theme: 🐟 aqua"),
+        new Country ("cupcake", "theme: 🧁 cupcake"),
+        new Country ("bumblebee", "theme: 🐝 bumblebee"),
+        new Country ("pastel", "theme: 🖍 pastel"),
+        new Country ("forest", "theme: 🧚‍♀️ forest"),
+        new Country ("luxury", "theme: 💎 luxury"),
+
+
+
+
+
+    };
+
+    public class Country
+    {
+
+        public Country(string code, string name)
+        {
+            Code = code;
+            Name = name;
+        }
+        public string Code { get; set; }
+        public string Name { get; set; }
+
+    }
+}

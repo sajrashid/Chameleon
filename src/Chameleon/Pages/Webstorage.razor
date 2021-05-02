@@ -2,27 +2,24 @@
 @inject Blazored.LocalStorage.ILocalStorageService localStorage
 @inject IJSRuntime JS
 
-<div class="menu @(IsOpen ? "open" : "")"></div>
 <button  class=" rounded font-semibold bg-blue-500 theme-btn px-4 py-2 text-3xl bg-primary text-primary hover:text-secondary  py-3   theme-btn text-black dark:text-white dark:hover:text-emerald-500 hover:text-blue-600"  @onclick="@AddClass">Swap Theme</button>
 
 @code {
-    private bool IsOpen { get; set; } = false;
     private string theme { get; set; } = "";
     private async Task AddClass()
     {
-        IsOpen = !IsOpen;
 
         switch (theme)
         {
 
             case "dark":
                 theme = "light";
-                await JS.InvokeAsync<object>("changeThemeMode" , "light");
+                await JS.InvokeAsync<object>("plum", "light");
                 break;
 
             case "light":
                 theme = "dark";
-                await JS.InvokeAsync<string>("changeThemeMode","dark");
+                await JS.InvokeAsync<string>("plum", "dark");
                 break;
             case "":
                 //  JSRuntime.InvokeAsync<object>("lightMode");
@@ -44,7 +41,7 @@
                 await localStorage.SetItemAsync("theme", theme);
             }else
             {
-                await JS.InvokeAsync<object>("changeThemeMode", theme);
+                await JS.InvokeAsync<object>("plum", theme);
             }
 
         }

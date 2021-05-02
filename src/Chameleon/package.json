@@ -18,13 +18,16 @@
   "dependencies": {
     "@fullhuman/postcss-purgecss": "^4.0.3",
     "@tailwindcss/postcss7-compat": "^2.0.2",
-    "tailwindcss": "npm:@tailwindcss/postcss7-compat@^2.0.2",
+    "chart.js": "^3.2.0",
     "cssnano": "^5.0.1",
+    "daisyui": "^0.21.3",
     "gulp": "^4.0.2",
     "gulp-postcss": "^9.0.0",
+    "moment": "^2.29.1",
     "postcss-cli": "^8.3.1",
     "postcss-import": "^14.0.1",
     "precss": "^4.0.0",
+    "tailwindcss": "npm:@tailwindcss/postcss7-compat@^2.0.2",
     "watch": "^1.0.2"
   },
   "devDependencies": {

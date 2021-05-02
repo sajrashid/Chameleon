@@ -8,8 +8,18 @@ module.exports = {
 
         './**/*.html',
         './**/*.razor'
-    ],
-},
+        ],
+        options: {
+            safelist: [
+                /data-theme$/,
+            ]
+        },
+    },
+    daisyui: {
+        styled: true,
+        themes: true,
+        rtl: false,
+    },
     darkMode: 'class', // false or 'media'
     theme: {
         extend: {
@@ -22,5 +32,6 @@ module.exports = {
     variants: {
         extend: {},
     },
-    plugins: [],
+    plugins: [require('daisyui')
+    ],
 }
