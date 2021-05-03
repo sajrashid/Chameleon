@@ -28,9 +28,16 @@ module.exports = {
                 emerald: colors.emerald
             },
         },
+     fill: theme => ({
+            'red': theme('colors.red.500'),
+            'green': theme('colors.green.500'),
+            'blue': theme('colors.blue.500'),
+        })
     },
     variants: {
-        extend: {},
+        extend: {
+            fill: ['hover', 'focus'],
+        },
     },
     plugins: [require('daisyui')
     ],

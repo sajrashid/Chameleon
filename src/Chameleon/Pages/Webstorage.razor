@@ -14,12 +14,12 @@
 
             case "dark":
                 theme = "light";
-                await JS.InvokeAsync<object>("plum", "light");
+                //    await JS.InvokeAsync<object>("plum", "light");
                 break;
 
             case "light":
                 theme = "dark";
-                await JS.InvokeAsync<string>("plum", "dark");
+                //  await JS.InvokeAsync<string>("plum", "dark");
                 break;
             case "":
                 //  JSRuntime.InvokeAsync<object>("lightMode");
@@ -30,24 +30,26 @@
     }
 
 
+
     protected override async Task OnAfterRenderAsync(bool firstRender)
     {
         if (firstRender)
         {
+        
             theme = await localStorage.GetItemAsync<string>("theme");
             if (theme == null )
             {
                 theme = "light";
-                await localStorage.SetItemAsync("theme", theme);
+                //   await localStorage.SetItemAsync("theme", theme);
             }else
             {
-                await JS.InvokeAsync<object>("plum", theme);
+                //  await JS.InvokeAsync<object>("plum", theme);
             }
 
         }
         else
         {
-            await localStorage.SetItemAsync("theme", theme);
+            //   await localStorage.SetItemAsync("theme", theme);
         }
 
     }
