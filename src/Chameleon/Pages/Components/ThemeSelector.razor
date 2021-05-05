@@ -6,7 +6,7 @@
 
 
 
-<select data-choose-theme="" class="w-full select bg-base-300 text-base-content" value="@Value" @onchange="OnValueChanged">
+<select data-choose-theme="" class="w-full select " value="@Value" @onchange="OnValueChanged">
 
     <option value=""></option>
     @foreach (var country in CountryList)
@@ -70,9 +70,6 @@
         new Country ("pastel", "theme: 🖍 pastel"),
         new Country ("forest", "theme: 🧚‍♀️ forest"),
         new Country ("luxury", "theme: 💎 luxury"),
-
-
-
 
 
     };

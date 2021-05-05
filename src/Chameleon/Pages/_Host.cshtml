@@ -12,56 +12,60 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Chameleon</title>
     <base href="~/" />
-    <link href="css/site.css" rel="stylesheet" />
+    <link href="~/css/site.css" rel="stylesheet" />
+    <style>
+        body {
+            font-size: large;
+        }
+    </style>
     <script>
 
         function CSMethod() {
-            DotNet.invokeMethodAsync("Chameleon", "ChangeSideBarCssClass")
-             
+            //     DotNet.invokeMethodAsync("Chameleon", "ChangeSideBarCssClass")
+
         }
 
         window.plum = (selectedTheme) => {
             var selector = document.getElementsByTagName('html')[0];
             selector.setAttribute('data-theme', selectedTheme);
-            localStorage.setItem("theme" ,selectedTheme)
+            localStorage.setItem("theme", selectedTheme)
         }
         plum(localStorage.getItem("theme"));
         console.log("h");
 
-    
 
-        window.OnClickOutside = (e) => {
-            console.log(e)
-            var parent = document.getElementById('sideBar');
-            if (parent) {
-                console.log(parent)
-                var result = parent.compareDocumentPosition(e.target);
-                console.log(result)
-                if (result) {
-                    console.log("1:" + result)
-                    if (parent.classList.contains("active")) {
-                        var p = document.getElementsByClassName("toggle-btn")[0];
-                        console.log(e.target)
-                        console.log("node:" + e.target.nodeName)
-                        var r = p.compareDocumentPosition(e.target);
-                        console.log(result)
-                        if (r && e.target.nodeName!="SELECT" ) {
-                            console.log("calling from 2 ")
-                            CSMethod();
-                        }
-                    }
-                } 
-            }
-        }
-      
-   
-        window.addEventListener("click", (evt) => { OnClickOutside(evt); }, false);
 
-       
+                        //window.OnClickOutside = (e) => {
+                        //    console.log(e)
+                        //    var parent = document.getElementById('sideBar');
+                        //    if (parent) {
+                        //        console.log(parent)
+                        //        var result = parent.compareDocumentPosition(e.target);
+                        //        console.log(result)
+                        //        if (result) {
+                        //            console.log("1:" + result)
+                        //            if (parent.classList.contains("active")) {
+                        //                var p = document.getElementsByClassName("toggle-btn")[0];
+                        //                console.log(e.target)
+                        //                console.log("node:" + e.target.nodeName)
+                        //                var r = p.compareDocumentPosition(e.target);
+                        //                console.log(result)
+                        //                if (r && e.target.nodeName!="SELECT" ) {
+                        //                    console.log("calling from 2 ")
+                        //                    CSMethod();
+                        //                }
+                        //            }
+                        //        }
+                        //    }
+                        //}
+
+
+                      ///  window.addEventListener("click", (evt) => { OnClickOutside(evt); }, false);
+
+
     </script>
-    <script src="_cdcontent/BlazorInputFile/inputfile.js"></script>
     <script src="~/js/my_lib.js"></script>
-
+    <script src="_content/BlazorInputFile/inputfile.js"></script>
 </head>
 <body>
     <component type="typeof(App)" render-mode="ServerPrerendered" />

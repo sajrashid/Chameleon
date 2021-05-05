@@ -2,7 +2,7 @@
 @namespace Chameleon.Pages
 @inject IJSRuntime JsRuntime;
 
-<div id="sideBar" class="@(( Left ? "active" : "" ) + " sidebar")">
+<div id="sideBar" class="@(( Left ? "" : "active" ) + " sidebar")">
     <div class="toggle-btn" @onclick="ChangeSideBarCssClass">
         <span></span>
         <span></span>
@@ -13,8 +13,8 @@
         <div class="item">About us</div>
         <div class="item">Gallery</div>
         <div class="item">Contact us</div>
-        <div class="item group hover:bg-blue-600">
-            <a href="Settings">
+        <div class="item group ">
+            <a href="Settings" class="hover:bg-blue-600">
                 <span class="group-hover:text-black d-inline-block  p-1 m-0">
                     Theme
                 </span>
@@ -24,15 +24,14 @@
                     </svg>
                 </span>
             </a>
-
-
-
-
         </div>
         <div>
             <ThemeSelector />
         </div>
     </div>
+</div>
+<div class="overlay @( IsOverLay ? "overlayOff" : "overlayOn" )" @onclick="ChangeOverLayCssClass">
+    on
 </div>
 
 
@@ -40,6 +39,7 @@
 
     private static Action action;
     private static bool Left { get; set; } = true;
+    private static bool IsOverLay { get; set; } = true;
 
     protected override void OnInitialized()
     {
@@ -49,6 +49,7 @@
     private void UpdateCss()
     {
         Left = !Left;
+        IsOverLay = !IsOverLay;
         StateHasChanged();
     }
 
@@ -58,5 +59,13 @@
     {
         action.Invoke();
 
+    }
+
+
+
+    public void ChangeOverLayCssClass(MouseEventArgs e)
+    {
+        Left = !Left;
+        IsOverLay = !IsOverLay;
     }
 }
