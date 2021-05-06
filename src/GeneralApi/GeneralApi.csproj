@@ -6,10 +6,10 @@
 
   <ItemGroup>
     <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
-    <PackageReference Include="Swashbuckle.AspNetCore" Version="5.6.3" />
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\ConfigShared\Config.Shared.csproj" />
     <ProjectReference Include="..\DataShared\Data.Shared.csproj" />
   </ItemGroup>
 

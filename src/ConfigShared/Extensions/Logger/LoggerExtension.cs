@@ -1,19 +1,29 @@
-﻿using Microsoft.AspNetCore.Builder;
-using Microsoft.AspNetCore.Hosting;
-using Microsoft.Extensions.DependencyInjection;
-using Microsoft.Extensions.Hosting;
-using Serilog;
-using System;
-using System.IO;
+﻿// <copyright file="LoggerExtension.cs" company="PlaceholderCompany">
+// Copyright (c) PlaceholderCompany. All rights reserved.
+// </copyright>
 
 namespace ConfigShared.Extensions.Logger
 {
-    public static class LoggerExtensions
+    using System;
+    using System.IO;
+    using Microsoft.AspNetCore.Builder;
+    using Microsoft.AspNetCore.Hosting;
+    using Microsoft.Extensions.DependencyInjection;
+    using Microsoft.Extensions.Hosting;
+    using Serilog;
+
+    /// <summary>
+    /// LoggerExtension static class.
+    /// </summary>
+    public static class LoggerExtension
     {
+        /// <summary>
+        /// logger config.
+        /// </summary>
+        /// <param name="services">services.</param>
+        /// <returns>>services.</returns>
         public static IServiceCollection AddLoggerConfig(this IServiceCollection services)
         {
-
-            //serilog
             services.AddLogging(loggingBuilder =>
              loggingBuilder.AddSerilog(dispose: true));
 
@@ -26,68 +36,55 @@ namespace ConfigShared.Extensions.Logger
             return services;
         }
 
-
+        /// <summary>
+        /// logger config.
+        /// </summary>
+        /// <param name="app">app.</param>
+        /// <param name="env">services.</param>
+        /// <returns>app services.</returns>
         public static IApplicationBuilder UseLoggerConfig(this IApplicationBuilder app, IWebHostEnvironment env)
         {
             var callingAppName = env.ApplicationName;
 
-            var logfileFolder = ("logs\\" + callingAppName);
+            var logfileFolder = "logs\\" + callingAppName;
 
             if (env.IsDevelopment())
-            {// logfiles save in %windir%/log
+            {
+              // logfiles save in %windir%/log
               //  var windir = Environment.GetEnvironmentVariable("WinDir");
-             //   var callingAppName = env.ApplicationName;
+              //  var callingAppName = env.ApplicationName;
               //  var logfileFolder = string.Empty;
-                // local machine for dev work logfiles save to c:\windows\logs\AppName
+              // local machine for dev work logfiles save to c:\windows\logs\AppName
               //  logfileFolder = (windir + "\\logs\\" + callingAppName);
-
-             //   logfileFolder = ( "\\logs\\" + callingAppName);
-
-                bool IsFolderCreated = Directory.Exists(logfileFolder);
-                if (!IsFolderCreated)
+              //  logfileFolder = ( "\\logs\\" + callingAppName);
+                bool isFolderCreated = Directory.Exists(logfileFolder);
+                if (!isFolderCreated)
                 {
                     Directory.CreateDirectory(logfileFolder);
                 }
-
-
-
             }
-            if (env.IsLocal())
-            {// logfiles save 
-             //TODO
 
+            if (env.IsLocal())
+            {
             }
 
             if (env.IsDevelopment())
-            {// logfiles save 
-             //TODO
+            {
             }
 
             if (env.IsSIT())
-            {// logfiles save 
-             //TODO
-
+            {
             }
 
             if (env.IsUAT())
-            {// logfiles save 
-             //TODO
-
+            {
             }
-
 
             if (env.IsProduction())
-            {// logfiles save 
-             //TODO
-
+            {
             }
 
-
-
-
-
-
-            //add serilog https://github.com/serilog/serilog-extensions-logging
+            // add serilog https://github.com/serilog/serilog-extensions-logging
             // https://github.com/serilog/serilog-extensions-logging/blob/dev/samples/Sample/Program.cs
             Log.Logger = new LoggerConfiguration()
                 .Enrich.FromLogContext()

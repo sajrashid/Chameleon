@@ -2,6 +2,11 @@
 @tailwind components;
 @tailwind utilities;
 
+
+.main select {
+    border-radius: 0 !important;
+}
+
 #blazor-error-ui {
     background: lightyellow;
     bottom: 0;
@@ -53,22 +58,21 @@
         }
 
     .sidebar div.list div.item {
-        padding: 15px 10px;
         border-bottom: 1px solid #444;
         color: #fcfcfc;
         text-transform: uppercase;
-        font-size: 12px;
+    }
+    .overlay {
+        
     }
     .overlayOff{
-        display:none;
         position:absolute;
         z-index:-1;
         top:0;
         left:0;
-        width:0;height:0;
+        width:0;height:100%;
     }
 .overlayOn {
-    display: block;
     background-color: #000;
     display: block;
     height: 100%;
@@ -77,7 +81,6 @@
     position: absolute;
     top: 0;
     left: 0;
-    margin-left:11em;
-    z-index: 1000;
+    z-index: 998;
 }
   
