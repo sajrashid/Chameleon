@@ -1,56 +1,61 @@
 ﻿using Microsoft.AspNetCore.Components;
 using System;
 using System.Collections.Generic;
-using System.Linq;
+using Chameleon.Services;
+using Data.shared.Models;
+using System.Net.Http;
 using System.Threading.Tasks;
-
+using System.Linq;
 
 namespace Chameleon.Pages
 {
-    public partial class Settings : ComponentBase
+     
+      public partial class Settings : ComponentBase
     {
-        List<Game> Games = new List<Game> {
-            new Game() { ID= "Game1", Text= "American Football"},
-            new Game() { ID= "Game2", Text= "Badminton"  },
-            new Game() { ID= "Game3", Text= "Basketball"  },
-            new Game() { ID= "Game4", Text= "Cricket"},
-            new Game() { ID= "Game5", Text= "Football" },
-            new Game() { ID= "Game6", Text= "Golf"  },
-            new Game() { ID= "Game7", Text= "Hockey"  },
-            new Game() { ID= "Game8", Text= "Rugby" },
-            new Game() { ID= "Game9", Text= "Snooker"  },
-            new Game() { ID= "Game10", Text= "Tennis" },
-            };
+        [Inject]
+        private IApiService _apiService { get; set; }
+
+        public List<Machine> Machines { get; set; } = new List<Machine>();
+
+
+
+        protected override async Task OnInitializedAsync()
+        {
+            Console.WriteLine("In Class Task OnInitializedAsyn");
+            //  Console.WriteLine($"enumurable: {MachinesEnumerbale.ToList()} "); 
+            Machines = await _apiService.OnGet("http://localhost:5001/api/machines");
+            await InvokeAsync(StateHasChanged);
+        }
+         
         int currentIndex;
-        void StartDrag(Game item)
+        void StartDrag(Machine item)
         {
             currentIndex = GetIndex(item);
-            Console.WriteLine($"DragStart for {item.ID} index {currentIndex}");
+            Console.WriteLine($"DragStart for {item.Id} index {currentIndex}");
         }
 
-        void ClickItem(Game item)
+        void ClickItem(Machine item)
         {
             currentIndex = GetIndex(item);
         }
 
-        int GetIndex(Game item)
+        int GetIndex(Machine item)
         {
-            return Games.FindIndex(a => a.ID == item.ID);
+            return Machines.FindIndex(a => a.Id == item.Id);
         }
 
-        void Drop(Game item)
+        void Drop(Machine item)
         {
             if (item != null)
             {
-                Console.WriteLine($"Drop item {item.Text} ({item.ID})");
+                Console.WriteLine($"Drop item {item.Name} ({item.Id})");
                 var index = GetIndex(item);
                 Console.WriteLine($"Drop index is {index}, move from {currentIndex}");
                 // get current item
-                var current = Games[currentIndex];
+                var current = Machines[currentIndex];
                 // remove game from current index
-                Games.RemoveAt(currentIndex);
-                Games.Insert(index, current);
-
+                Machines.RemoveAt(currentIndex);
+                Machines.Insert(index, current);
                 // update current selection
                 currentIndex = index;
                 InvokeAsync(StateHasChanged);
@@ -60,20 +65,7 @@ namespace Chameleon.Pages
                 Console.WriteLine("Drop - null");
             }
         }
-
-       
     }
-    public class Game
-    {
-        public string ID { get; set; }
-        public string Text { get; set; }
-        public override string ToString()
-        {
-            return Text;
-        }
-
-    }
-
 }
 
 

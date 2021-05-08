@@ -18,15 +18,17 @@
     <PackageReference Include="BlazorInputFile" Version="0.2.0" />
       <PackageReference Include="ChartJs.Blazor.Fork" Version="2.0.2" />
       <PackageReference Include="GridBlazor" Version="2.1.14" />
+      <PackageReference Include="System.Net.Http.Json" Version="5.0.0" />
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\ConfigShared\Config.Shared.csproj" />
     <ProjectReference Include="..\DataShared\Data.Shared.csproj" />
     <ProjectReference Include="..\GeneralApi\GeneralApi.csproj" />
-    <ProjectReference Include="..\UserApi\UserApi.csproj" />
   </ItemGroup>
 
   <ItemGroup>
+    <Folder Include="logs\Chameleon\" />
     <Folder Include="wwwroot\css\bootstrap\" />
   </ItemGroup>
 

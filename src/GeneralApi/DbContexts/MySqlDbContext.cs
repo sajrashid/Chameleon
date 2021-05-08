@@ -1,25 +1,18 @@
-﻿using BlazorSignalR.Server.Models;
-using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
-using System;
-using System.Collections.Generic;
-using System.Configuration;
-using System.Linq;
-using System.Threading.Tasks;
+using Data.shared.Models;
 
-namespace USerApi.DbContexts
+namespace GeneralApi.DbContexts
 {
-    public class UserDbContext : DbContext
+    public class MySqlDbContext : DbContext
     {
-        public UserDbContext(IConfiguration configuration)
+        public MySqlDbContext(IConfiguration configuration)
         {
             Configuration = configuration;
         }
         public IConfiguration Configuration { get; }
 
-        public DbSet<User> Users { get; set; }
-        public DbSet<Role> Roles { get; set; }
-
+        public DbSet<Machine> Machines { get; set; }
         // The following configures EF to create a Sqlite database file as `C:\blogging.db`.
         // For Mac or Linux, change this to `/tmp/blogging.db` or any other absolute path.
         protected override void OnConfiguring(DbContextOptionsBuilder options)
