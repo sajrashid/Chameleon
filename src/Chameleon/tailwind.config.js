@@ -27,6 +27,10 @@ module.exports = {
                 lime: colors.lime,
                 emerald: colors.emerald
             },
+            backdropFilter: {
+                'none': 'none',
+                'blur': 'blur(20px)',
+            },
         },
      fill: theme => ({
             'red': theme('colors.red.500'),
@@ -37,8 +41,10 @@ module.exports = {
     variants: {
         extend: {
             fill: ['hover', 'focus'],
+            backgroundColor: ['active'],
         },
     },
-    plugins: [require('daisyui')
-    ],
+    plugins: [
+               require('daisyui'),
+             ],
 }

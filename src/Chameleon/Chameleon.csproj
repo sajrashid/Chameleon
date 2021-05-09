@@ -29,7 +29,7 @@
 
   <ItemGroup>
     <Folder Include="logs\Chameleon\" />
-    <Folder Include="wwwroot\css\bootstrap\" />
+    <Folder Include="wwwroot\css\" />
   </ItemGroup>
 
 </Project>

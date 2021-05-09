@@ -9,5 +9,5 @@ export function GetCurrentTime() {
 }
 
 export function Chart () {
-    return Chart();
+    return chart();
 }

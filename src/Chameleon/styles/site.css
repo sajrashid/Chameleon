@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 
-.main select {
+select {
     border-radius: 0 !important;
 }
 
@@ -26,61 +26,10 @@
     top: 0.5rem;
 }
 
-
-.sidebar {
-    position: absolute;
-    top: 0px;
-    width: 200px;
-    height: 100%;
-    background: #151719;
-    transition: all 300ms linear;
-    left: -12.5em;
+html,body{
+    height:100%;
 }
-
-    .sidebar.active {
-        left: 0px;
-        z-index:999;
-    }
-
-    .sidebar .toggle-btn {
-        position: absolute;
-        left: 12.7em;
-        top: 50%;
-    }
-
-        .sidebar .toggle-btn span {
-            display: block;
-            width: 30px;
-            height: 5px;
-            background: #151719;
-            margin: 5px 0px;
-            cursor: pointer;
-        }
-
-    .sidebar div.list div.item {
-        border-bottom: 1px solid #444;
-        color: #fcfcfc;
-        text-transform: uppercase;
-    }
-    .overlay {
-        
-    }
-    .overlayOff{
-        position:absolute;
-        z-index:-1;
-        top:0;
-        left:0;
-        width:0;height:100%;
-    }
-.overlayOn {
-    background-color: #000;
-    display: block;
+body {
     height: 100%;
-    opacity: 0.7;
-    width: 100%;
-    position: absolute;
-    top: 0;
-    left: 0;
-    z-index: 998;
+    overflow-x: hidden;
 }
-  
