@@ -11,10 +11,9 @@ namespace Chameleon.Pages.Components.Settings
     public partial class FavMachines
     {
 
+        private List<Machine> Machines { get; set; } = new List<Machine>();
         [Inject]
-        private IApiService _apiService { get; set; }
-
-        public List<Machine> Machines { get; set; } = new List<Machine>();
+        private IApiService<List<Machine>> _apiService { get; set; }
 
 
         protected override async Task OnInitializedAsync()

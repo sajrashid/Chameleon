@@ -24,12 +24,10 @@
   <ItemGroup>
     <ProjectReference Include="..\ConfigShared\Config.Shared.csproj" />
     <ProjectReference Include="..\DataShared\Data.Shared.csproj" />
-    <ProjectReference Include="..\GeneralApi\GeneralApi.csproj" />
   </ItemGroup>
 
   <ItemGroup>
     <Folder Include="logs\Chameleon\" />
-    <Folder Include="wwwroot\css\" />
   </ItemGroup>
 
 </Project>

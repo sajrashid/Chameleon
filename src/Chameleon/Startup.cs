@@ -23,7 +23,7 @@ namespace Chameleon
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddLoggerConfig();
-            services.AddSingleton<IApiService, ApiService>();
+            services.AddScoped(typeof(IApiService<>), typeof(ApiService<>));
             services.AddRazorPages();
             services.AddHttpClient();
             services.AddBlazoredLocalStorage();
