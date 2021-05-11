@@ -13,14 +13,13 @@ namespace Chameleon.Pages.Components.Settings
 
         private List<Machine> Machines { get; set; } = new List<Machine>();
         [Inject]
-        private IApiService<List<Machine>> _apiService { get; set; }
+        private IApiService<List<Machine>> ApiService { get; set; }
 
 
         protected override async Task OnInitializedAsync()
         {
-            Console.WriteLine("In Class Task OnInitializedAsyn");
-            //  Console.WriteLine($"enumurable: {MachinesEnumerbale.ToList()} "); 
-            Machines = await _apiService.OnGet("http://localhost:5001/api/machines");
+            
+            Machines = await ApiService.OnGet("http://localhost:5001/api/machines");
             await InvokeAsync(StateHasChanged);
         }
 

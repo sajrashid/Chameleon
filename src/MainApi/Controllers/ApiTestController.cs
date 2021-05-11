@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Data.Shared.Models;
+using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -14,10 +15,11 @@ namespace MainApi.Controllers
     {
         // GET: api/<ApiTestController>
         [HttpGet]
-        public bool Get()
+        public ActionResult<HelloWorld> Get()
         {
-            return true;
+          var Hello = new HelloWorld();
+          Hello.Greetings = "HelloWorld";
+          return  Hello;
         }
-      
     }
 }

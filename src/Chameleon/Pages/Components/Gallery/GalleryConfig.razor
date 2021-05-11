@@ -2,29 +2,12 @@
 <EditForm Model="@inputText">
     <InputText id="@InputID" @bind-Value="inputText.TextValue">You can enter some text...</InputText>
     <p>@inputText.TextValue</p>
+    <p>@inputText.TextValue</p>
 </EditForm>
 
 <br />
 <br />
-<button @onclick="BtnApiTestClick"  role="button" aria-pressed="true" class="sqrbtn btn btn-primary tracking-wider">Test</button>
+<button @onclick="BtnApiTestClick" role="button" aria-pressed="true" class="sqrbtn btn btn-primary tracking-wider">Test</button>
 <p>@Output</p>
 
-
 <br />
-@code {
- 
-    public string InputID = "input-id";
-    public string Output = "";
-
-    public class InputTextClass
-    {
-        public string TextValue = "Some Random Text";
-    }
-
-    public InputTextClass inputText = new InputTextClass();
-
-    public async Task BtnApiTestClick()
-    {
-        //test HTTP response
-    }
-}
