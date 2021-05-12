@@ -2,13 +2,13 @@
 @namespace Chameleon.Pages
 @inject IJSRuntime JsRuntime;
 
-<div id="sideBar" class="@(( isSideBar ? "" : "active" ) + " sidebar") bg-base-300 text-base-content bg-neutral text-neutral-content">
+<div id="sideBar" class="@(( IsSideBar ? "" : "active" ) + " sidebar") bg-base-300 text-base-content bg-neutral text-neutral-content">
     <div class="list">
 
        <div class="sm:block md:hidden">
         <div class="bg-base-200">
             <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" -->
-            <a href="#" class="border-b border-current p-3 h-full w-full h block hover:bg-neutral-focus" aria-current="page" Match="NavLinkMatch.All">
+            <a href="" class="border-b border-current p-3 h-full w-full h block hover:bg-neutral-focus" aria-current="page" Match="NavLinkMatch.All">
                 <span class="oi oi-home align-middle inline-block p-0" aria-hidden="true"></span> Home
             </a>
             <a href="counter" class="border-b border-current p-3 h-full w-full h block hover:bg-neutral-focus">
@@ -24,6 +24,8 @@
     </div>
         <div class="bg-base-100 border-t-2 border-current ">
             <div class="bg-base-200" >
+
+                <button @onclick=@Navigate>Navigate</button>
                 <a href="Settings" class="p-3 h-full w-full h block hover:bg-neutral-focus">
                     <span class="align-middle inline-block p-0">
                         <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -42,5 +44,5 @@
         </div>
     </div>
 </div>
-<div class="@(( isOverLay ? "" : "overlayOn") + " overlay")" @onclick="ChangeOverLayCssClass"></div>
+<div class="@(( IsOverLay ? "" : "overlayOn") + " overlay")" @onclick="ChangeOverLayCssClass"></div>
 

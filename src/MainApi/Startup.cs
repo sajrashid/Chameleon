@@ -9,9 +9,9 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 
-
-namespace GeneralApi
+namespace MainApi
 {
+
     public class Startup
     {
         public Startup(IConfiguration configuration)
@@ -56,5 +56,5 @@ namespace GeneralApi
                 endpoints.MapControllers();
             });
         }
-    }
+    }  
 }

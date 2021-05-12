@@ -1,5 +1,4 @@
 @page "/webstorage"
-@inject Blazored.LocalStorage.ILocalStorageService localStorage
 @inject IJSRuntime JS
 
 <button  class=" rounded font-semibold bg-blue-500 theme-btn px-4 py-2 text-3xl bg-primary text-primary hover:text-secondary  py-3   theme-btn text-black dark:text-white dark:hover:text-emerald-500 hover:text-blue-600"  @onclick="@AddClass">Swap Theme</button>
@@ -36,7 +35,7 @@
         if (firstRender)
         {
         
-            theme = await localStorage.GetItemAsync<string>("theme");
+         //   theme = await localStorage.GetItemAsync<string>("theme");
             if (theme == null )
             {
                 theme = "light";

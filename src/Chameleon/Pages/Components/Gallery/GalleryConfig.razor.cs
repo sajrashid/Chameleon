@@ -7,7 +7,6 @@
 
     public partial class GalleryConfig
     {
-        private HelloWorld Hello { get; set; }
         [Inject]
         private IApiService<HelloWorld> ApiService {get; set;}
 
@@ -24,8 +23,9 @@
 
         public async Task BtnApiTestClick()
         {
-            Hello = await ApiService.OnGet("http://localhost:5001/api/apiTest");
-            Output = Hello.Greetings;
+            var HELLO = new HelloWorld();
+            HELLO = await ApiService.OnGet("http://localhost:5001/api/apiTest");
+            Output = HELLO.Greetings;
             await InvokeAsync(StateHasChanged);
         }
     }

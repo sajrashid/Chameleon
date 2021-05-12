@@ -31,18 +31,18 @@ namespace ConfigShared
         /// <summary>
         /// Enviroment bool.
         /// </summary>
-        /// <param name="env">Sets the bool to UAT.</param>
+        /// <param name="env.IsEnvironment">Sets the bool to UAT.</param>
         /// <returns>environment.</returns>
         public static bool IsUAT(this IWebHostEnvironment env)
         {
             return env.IsEnvironment(UAT);
         }
 
-       /// <summary>
-       /// Returns hosting env.
-       /// </summary>
-       /// <param name="env">hosting env.</param>
-       /// <returns>environment.</returns>
+        /// <summary>
+        /// Enviroment bool.
+        /// </summary>
+        /// <param name="env.IsEnvironment">hosting env.</param>
+        /// <returns>environment.</returns>
         public static bool IsSIT(this IWebHostEnvironment env)
         {
             return env.IsEnvironment(SIT);
@@ -51,7 +51,7 @@ namespace ConfigShared
         /// <summary>
         /// Enviroment bool.
         /// </summary>
-        /// <param name="env">Sets the bool to Local.</param>
+        /// <param name="env.IsEnvironment">Sets the bool to Local.</param>
         /// <returns>environment.</returns>
         public static bool IsLocal(this IWebHostEnvironment env)
         {

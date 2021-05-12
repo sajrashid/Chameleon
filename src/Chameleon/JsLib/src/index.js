@@ -1,4 +1,4 @@
-﻿import chart from 'chart.js';
+﻿import pieChart from './chart_lib.js';
 import { getCurrentTime } from './time_lib';
 
 
@@ -9,5 +9,5 @@ export function GetCurrentTime() {
 }
 
 export function Chart () {
-    return chart();
+    return pieChart();
 }

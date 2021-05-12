@@ -1,6 +1,5 @@
 ﻿namespace Chameleon.Services
 {
-    using Data.shared.Models;
     using System;
     using System.Collections.Generic;
     using System.Linq;

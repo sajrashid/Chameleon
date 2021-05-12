@@ -9,21 +9,27 @@ namespace Chameleon.Pages
 {
     public partial class SideBar
     {
-        private bool isSideBar { get; set; } = true;
-        private bool isOverLay { get; set; } = true;
+        private bool IsSideBar { get; set; } = true;
+        private bool IsOverLay { get; set; } = true;
         
 
         public void ChangeOverLayCssClass(MouseEventArgs e)
         {
-            InvokeAsync(() => isSideBar = !isSideBar);
-            isOverLay = !isOverLay;
+            InvokeAsync(() => IsSideBar = !IsSideBar);
+            IsOverLay = !IsOverLay;
         }
 
         public void Toggle()
         {
-            InvokeAsync(() => isSideBar = !isSideBar);
-            isOverLay = !isOverLay;
+            InvokeAsync(() => IsSideBar = !IsSideBar);
+            IsOverLay = !IsOverLay;
             StateHasChanged();
+        }
+
+        void Navigate()
+        {
+
+
         }
     }
 }

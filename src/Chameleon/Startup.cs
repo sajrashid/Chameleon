@@ -1,11 +1,10 @@
-using Blazored.LocalStorage;
-using Chameleon.Services;
 using ConfigShared.Extensions.Logger;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using Chameleon.Services;
 
 namespace Chameleon
 {
@@ -26,7 +25,6 @@ namespace Chameleon
             services.AddScoped(typeof(IApiService<>), typeof(ApiService<>));
             services.AddRazorPages();
             services.AddHttpClient();
-            services.AddBlazoredLocalStorage();
             services.AddServerSideBlazor();
         }
 
@@ -41,7 +39,7 @@ namespace Chameleon
             {
                 app.UseExceptionHandler("/Error");
             }
-             app.UseLoggerConfig(env);
+            app.UseLoggerConfig(env);
             app.UseStaticFiles();
 
             app.UseRouting();
