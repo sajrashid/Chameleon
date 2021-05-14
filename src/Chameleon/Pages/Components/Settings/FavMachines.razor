@@ -2,7 +2,7 @@
 <div ondragover="event.preventDefault();">
     <table class="w-full table-auto">
         <thead>
-            <tr class="shadow md pb-3 bg-base-200 text-base-content bg-neutral text-neutral-content">
+            <tr class="shadow md pb-3 bg-base-100 text-base-content bg-neutral text-neutral-content">
                 <th class="p-2 text-left font-normal">
                     <ToolTip Text="Connect to the selected machine on application start.">
                         <span class="align-middle inline-block pr-2">
@@ -22,7 +22,7 @@
                 {
                     if (item != null)
                     {
-                        <tr class="pb-3 bg-base-100 border-b border-current border-neutral-focus border-opacity-5" draggable="true" @key="item.Id" tabindex="1"
+                        <tr class="pb-3 bg-base-200 border-b border-current border-neutral-focus border-opacity-5" draggable="true" @key="item.Id" tabindex="1"
                             @ondrop="@(()=> Drop(item))" @ondrag="@(()=> StartDrag(item))">
                             @*<td>1 @item.Id</td>*@
                             <td class="p-2">@item.Default</td>
