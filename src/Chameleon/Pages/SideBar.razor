@@ -1,8 +1,9 @@
-﻿@page "/sideBar"
+﻿
+@page "/sideBar"
 @namespace Chameleon.Pages
 @inject IJSRuntime JsRuntime;
 
-<div id="sideBar" class="@(( isSideBar ? "" : "active" ) + " sidebar") bg-base-300 text-base-content bg-neutral text-neutral-content">
+<div id="sideBar"  @onclick="ClickEventHandler" class="@(( IsSideBar ? "" : "active" ) + " sidebar") bg-base-300 text-base-content bg-neutral text-neutral-content">
     <div class="list">
 
        <div class="sm:block md:hidden">
@@ -42,5 +43,5 @@
         </div>
     </div>
 </div>
-<div class="@(( isOverLay ? "" : "overlayOn") + " overlay")" @onclick="ChangeOverLayCssClass"></div>
+<div class="@(( IsOverLay ? "" : "overlayOn") + " overlay")" @onclick="ChangeOverLayCssClass"></div>
 
