@@ -6,8 +6,9 @@
     using System.Linq;
     using System.Threading.Tasks;
 
-    public interface IApiService<T> where T : class
+
+    public interface IApiService
     {
-        Task<T> OnGet(string url);
+        Task<List<Machine>> OnGet(string url);
     }
 }
