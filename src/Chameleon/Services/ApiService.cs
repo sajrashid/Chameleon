@@ -26,8 +26,8 @@
                 {
                     if (x.IsFaulted)
                         throw x.Exception;
-
                     result = JsonSerializer.Deserialize<T>(x.Result);
+
                 });
             }
             return result;

@@ -1,3 +1,12 @@
+@font-face {
+    font-family: 'Oxygen-Regular';
+    src: url('../fonts/Oxygen-Regular.ttf') format('truetype'), 
+         url('../fonts/Oxygen-Light.ttf') format('truetype'), 
+         url('../fonts/Oxygen-Bold.ttf') format('truetype');
+}
+
+/* oxygen-regular - latin */
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -5,6 +14,12 @@
 
 select {
     border-radius: 0 !important;
+}
+
+.sqrbtn {
+    border-radius: 0 !important;
+    height: 2.2rem !important;
+    min-height: 2.2rem !important;
 }
 
 #blazor-error-ui {
@@ -19,17 +34,19 @@ select {
     z-index: 1000;
 }
 
-#blazor-error-ui .dismiss {
-    cursor: pointer;
-    position: absolute;
-    right: 0.75rem;
-    top: 0.5rem;
+    #blazor-error-ui .dismiss {
+        cursor: pointer;
+        position: absolute;
+        right: 0.75rem;
+        top: 0.5rem;
+    }
+
+html, body {
+    height: 100%;
 }
 
-html,body{
-    height:100%;
-}
 body {
+    font-family: 'Oxygen-Regular', 'Segoe UI';
     height: 100%;
     overflow-x: hidden;
 }

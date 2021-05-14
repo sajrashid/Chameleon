@@ -24,7 +24,6 @@
   <ItemGroup>
     <ProjectReference Include="..\ConfigShared\Config.Shared.csproj" />
     <ProjectReference Include="..\DataShared\DataShared.csproj" />
-    <ProjectReference Include="..\GeneralApi\GeneralApi.csproj" />
   </ItemGroup>
 
   <ItemGroup>

@@ -15,12 +15,10 @@
     <link href="~/css/site.css" rel="stylesheet" />
     <link href="chameleon.styles.css" rel="stylesheet">
     <script>
-
         function CSMethod() {
             //     DotNet.invokeMethodAsync("Chameleon", "ChangeSideBarCssClass")
 
         }
-
         window.plum = (selectedTheme) => {
             var selector = document.getElementsByTagName('html')[0];
             selector.setAttribute('data-theme', selectedTheme);
