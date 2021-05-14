@@ -1,4 +1,4 @@
-using Chameleon.Services;
+﻿using Chameleon.Services;
 using DataShared.Models;
 using Microsoft.AspNetCore.Components;
 using System;
@@ -15,6 +15,7 @@ namespace Chameleon.Pages.Components.Settings
         private IApiService<List<Machine>> ApiService { get; set; }
 
         public List<Machine> Machines { get; set; } = new List<Machine>();
+
 
         protected override async Task OnInitializedAsync()
         {
