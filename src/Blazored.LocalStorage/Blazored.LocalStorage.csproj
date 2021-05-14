@@ -1,0 +1,55 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Razor">
+
+  <PropertyGroup>
+    <TargetFrameworks>net6.0</TargetFrameworks>
+
+    <Authors>Chris Sainty</Authors>
+    <Company></Company>
+    <Copyright>Copyright 2020 (c) Chris Sainty. All rights reserved.</Copyright> 
+    <Description>A library to provide access to local storage in Blazor applications</Description>
+    <IncludeSymbols>true</IncludeSymbols>
+    <SymbolPackageFormat>snupkg</SymbolPackageFormat>
+
+    <!-- NuGet settings -->
+    <PackageId>Blazored.LocalStorage</PackageId>
+    <PackageTags>Blazored;Blazor;Razor;Components;LocalStorage;Local Storage;ASP.NET Core;CSharp;Web</PackageTags>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <PackageProjectUrl>https://github.com/Blazored/LocalStorage</PackageProjectUrl>
+    <PackageIcon>icon.png</PackageIcon>
+    <RepositoryType>git</RepositoryType>
+    <RepositoryUrl>https://github.com/Blazored/LocalStorage</RepositoryUrl>
+
+    <!-- SourceLink settings -->
+    <PublishRepositoryUrl>true</PublishRepositoryUrl>
+    <EmbedUntrackedSources>true</EmbedUntrackedSources>
+    <SignAssembly>true</SignAssembly>
+    <AssemblyOriginatorKeyFile>Blazored.LocalStorage.snk</AssemblyOriginatorKeyFile>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(TargetFramework)' == 'netcoreapp3.1'">
+    <RazorLangVersion>3.0</RazorLangVersion>
+  </PropertyGroup>
+
+  <ItemGroup Condition="'$(TargetFramework)' == 'net6.0'">
+    <SupportedPlatform Include="browser" />
+  </ItemGroup>
+
+  <ItemGroup Condition="'$(TargetFramework)' == 'netcoreapp3.1'">
+    <PackageReference Include="Microsoft.AspNetCore.Components" Version="$(DotNet3Version)" />
+    <PackageReference Include="Microsoft.AspNetCore.Components.Web" Version="$(DotNet3Version)" />
+  </ItemGroup>
+  
+  <ItemGroup Condition="'$(TargetFramework)' == 'net6.0'">
+    <PackageReference Include="Microsoft.AspNetCore.Components" Version="6.0.0-preview.3.21201.13" />
+    <PackageReference Include="Microsoft.AspNetCore.Components.Web" Version="6.0.0-preview.3.21201.13" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="icon.png" Pack="true" PackagePath="\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="bunit.core" Version="1.1.5" />
+  </ItemGroup>
+
+</Project>

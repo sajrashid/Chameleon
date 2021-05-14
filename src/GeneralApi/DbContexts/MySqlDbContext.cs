@@ -1,6 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
-using Data.shared.Models;
+using DataShared.Models;
 
 namespace GeneralApi.DbContexts
 {

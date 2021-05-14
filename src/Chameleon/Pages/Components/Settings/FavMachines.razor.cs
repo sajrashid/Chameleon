@@ -1,5 +1,5 @@
 ﻿using Chameleon.Services;
-using Data.shared.Models;
+using DataShared.Models;
 using Microsoft.AspNetCore.Components;
 using System;
 using System.Collections.Generic;
@@ -12,7 +12,7 @@ namespace Chameleon.Pages.Components.Settings
     {
 
         [Inject]
-        private IApiService _apiService { get; set; }
+        private IApiService<List<Machine>> ApiService { get; set; }
 
         public List<Machine> Machines { get; set; } = new List<Machine>();
 
@@ -21,7 +21,7 @@ namespace Chameleon.Pages.Components.Settings
         {
             Console.WriteLine("In Class Task OnInitializedAsyn");
             //  Console.WriteLine($"enumurable: {MachinesEnumerbale.ToList()} "); 
-            Machines = await _apiService.OnGet("http://localhost:5001/api/machines");
+            Machines = await ApiService.OnGet("http://localhost:5001/api/machines");
             await InvokeAsync(StateHasChanged);
         }
 

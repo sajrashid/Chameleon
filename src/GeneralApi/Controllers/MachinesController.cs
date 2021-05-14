@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
-using Data.shared.Models;
+using DataShared.Models;
 using GeneralApi.DbContexts;
 
 namespace GeneralApi.Controllers

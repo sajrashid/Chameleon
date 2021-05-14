@@ -2,7 +2,7 @@
 using System;
 using System.Collections.Generic;
 using Chameleon.Services;
-using Data.shared.Models;
+using DataShared.Models;
 using System.Net.Http;
 using System.Threading.Tasks;
 using System.Linq;
