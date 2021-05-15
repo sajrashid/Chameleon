@@ -24,15 +24,17 @@ namespace Chameleon
         {
             services.AddLoggerConfig();
             services.AddScoped(typeof(IApiService<>), typeof(ApiService<>));
-            services.AddRazorPages();
+            services.Configure<AppSettings>(Configuration.GetSection("GallerySettings"));
             services.AddHttpClient();
             services.AddBlazoredLocalStorage();
+            services.AddRazorPages();
             services.AddServerSideBlazor();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
+
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
@@ -52,5 +54,12 @@ namespace Chameleon
                 endpoints.MapFallbackToPage("/_Host");
             });
         }
+    }
+
+    public class AppSettings
+    {
+        public const string GallerySettings = "GallerySettings";
+        public string ApiUrl { get; set; }
+
     }
 }
