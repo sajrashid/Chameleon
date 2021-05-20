@@ -1,0 +1,42 @@
+﻿<div ondragover="event.preventDefault();">
+    <table class="w-full table-auto">
+        <thead>
+            <tr class="shadow md pb-3 bg-base-100 text-base-content bg-neutral text-neutral-content">
+                <th class="p-2 text-left font-normal">
+                    <ToolTip Text="Connect to the selected machine on application start.">
+                        <span class="align-middle inline-block pr-2">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                            </svg>
+                        </span>
+                    </ToolTip>Connect
+                </th>
+                <th class="p-2 text-left font-normal">Name</th>
+                <th class="p-2 text-left font-normal">Type</th>
+            </tr>
+        </thead>
+        <tbody>
+            @if (Machines != null)
+            @foreach (var item in Machines)
+                {
+                    if (item != null)
+                    {
+            <tr class="pb-3 bg-base-200 border-b border-current border-neutral-focus border-opacity-5" draggable="true" @key="item.Id" tabindex="1"
+                @ondrop="@(()=> Drop(item))" @ondrag="@(()=> StartDrag(item))">
+                @*<td>1 @item.Id</td>*@
+                <td class="p-2">@item.Name</td>
+                <td class="p-2">@item.Type</td>
+            </tr>
+                    }
+                    else
+                    {
+            <tr class="bg-base-100 border-b border-current ">
+                <td>NULL??</td>
+                <td>NULL??</td>
+                <td>NULL??</td>
+            </tr>
+                    }
+                }
+        </tbody>
+    </table>
+</div>

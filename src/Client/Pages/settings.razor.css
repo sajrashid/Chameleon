@@ -1,0 +1,22 @@
+﻿.outer {
+    height: 100%
+}
+
+.sidpanel {
+    width: 15%;
+    float: left;
+    height: 100%;
+    border-right: solid 1px blue;
+    margin-right: 1em;
+}
+
+.inner {
+    width: 85%;
+    margin-left: 15%;
+    padding: 0 2.5% 0 2.5%;
+}
+
+.innerContent {
+    width: 50%;
+    margin: 0 auto;
+}

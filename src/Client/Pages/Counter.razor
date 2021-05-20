@@ -1,0 +1,46 @@
+﻿@page "/counter"
+
+<h1>Counter</h1>
+
+<p>Current count: @currentCount</p>
+<p>Selected Theme : @FormThemes.selectedTheme</p>
+
+<button class="btn btn-primary" @onclick="IncrementCount">Click me</button>
+
+<div>
+    <EditForm Model="FormThemes">
+        <InputSelect @bind-Value="FormThemes.selectedTheme">
+            @foreach (var value in Enum.GetValues(typeof(ThemesEnum)))
+            {
+            <option>@value</option>
+            }
+        </InputSelect>
+    </EditForm>
+</div>
+
+@code {
+    private int currentCount = 0;
+    private string selectedTheme = string.Empty;
+    Theme FormThemes = new Theme();
+
+    private void IncrementCount()
+    {
+        selectedTheme = FormThemes.selectedTheme.ToString();
+        Console.WriteLine(selectedTheme);
+        currentCount++;
+    }
+
+    public class Theme
+    {
+        public ThemesEnum selectedTheme { get; set; } = ThemesEnum.Space;
+    }
+
+    public enum ThemesEnum
+    {
+        Dark,
+        Space,
+        Mellow,
+    }
+
+
+}
