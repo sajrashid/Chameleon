@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Chameleon.Shared
 {
-    class Login
+    public class Login
     {
 
         [Required]

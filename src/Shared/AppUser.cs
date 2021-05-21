@@ -5,7 +5,6 @@ using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
 namespace Chameleon.Shared
 {
     public class AppUser
@@ -22,5 +21,7 @@ namespace Chameleon.Shared
         [Required]
         [MinLength(6, ErrorMessage = "The Password field must be a minimum of 6 characters")]
         public string Password { get; set; }
+
+        public string Theme { get; set; }
     }
 }

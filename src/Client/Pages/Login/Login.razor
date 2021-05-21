@@ -1,0 +1,12 @@
+﻿@page "/login"
+
+<div>
+    <EditForm Model="@UserCreds" OnValidSubmit="@HandleValidSubmit">
+        <DataAnnotationsValidator />
+        <ValidationSummary />
+        <InputText id="name" @bind-Value="UserCreds.Username" />
+        <InputText id="password" @bind-Value="UserCreds.Password" />
+        <button type="submit">Submit</button>
+    </EditForm>
+    <p>@isCredsValid</p>
+</div>

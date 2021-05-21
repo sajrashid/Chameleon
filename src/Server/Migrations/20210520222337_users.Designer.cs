@@ -8,14 +8,45 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Chameleon.Server.Migrations
 {
     [DbContext(typeof(SQLiteDBContext))]
-    [Migration("20210520204104_User")]
-    partial class User
+    [Migration("20210520222337_users")]
+    partial class users
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
                 .HasAnnotation("ProductVersion", "6.0.0-preview.3.21201.2");
+
+            modelBuilder.Entity("Chameleon.Shared.AppUser", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("INTEGER");
+
+                    b.Property<string>("Email")
+                        .IsRequired()
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("FirstName")
+                        .IsRequired()
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("LastName")
+                        .IsRequired()
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("Password")
+                        .IsRequired()
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("Username")
+                        .IsRequired()
+                        .HasColumnType("TEXT");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("AppUser");
+                });
 
             modelBuilder.Entity("Chameleon.Shared.Machine", b =>
                 {
@@ -24,12 +55,15 @@ namespace Chameleon.Server.Migrations
                         .HasColumnType("INTEGER");
 
                     b.Property<string>("Host")
+                        .IsRequired()
                         .HasColumnType("TEXT");
 
                     b.Property<string>("Name")
+                        .IsRequired()
                         .HasColumnType("TEXT");
 
                     b.Property<string>("Type")
+                        .IsRequired()
                         .HasColumnType("TEXT");
 
                     b.HasKey("Id");

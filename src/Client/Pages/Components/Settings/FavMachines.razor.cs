@@ -20,9 +20,6 @@ namespace Chameleon.Client.Pages.Components.Settings
             Console.WriteLine("In Class Task OnInitializedAsyn");
             //  Console.WriteLine($"enumurable: {MachinesEnumerbale.ToList()} ");
                 Machines = await Http.GetFromJsonAsync<List<Machine>>("api/Machines");
-
-
-          
             await InvokeAsync(StateHasChanged);
         }
 

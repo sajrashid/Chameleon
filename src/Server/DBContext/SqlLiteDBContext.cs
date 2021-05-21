@@ -10,6 +10,6 @@ namespace Chameleon.Server.DBContext
         protected override void OnConfiguring(DbContextOptionsBuilder options)
             => options.UseSqlite("Data Source=sqlitedemo.db");
 
-        public DbSet<Chameleon.Shared.AppUser> AppUser { get; set; }
+        public DbSet<AppUser> AppUser { get; set; }
     }
 }

@@ -2,14 +2,16 @@
 using Chameleon.Server.DBContext;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace Chameleon.Server.Migrations
 {
     [DbContext(typeof(SQLiteDBContext))]
-    partial class SQLiteDBContextModelSnapshot : ModelSnapshot
+    [Migration("20210521000124_themeprop")]
+    partial class themeprop
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
