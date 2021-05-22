@@ -57,6 +57,26 @@ div  .validation-errors {
     color:darkred;
     font-size:0.9rem;
 }
-div  .modified {
+.login .leftspan {
+    position: absolute;
+    height: 2.8em;
+    padding-top: 1em;
+    padding: 0.6em;
+    padding-top: 0.865em;
+    border-radius: 0.4em 0em 0em 0.4em;
+    margin: 0.1em 0 0.1em 0.1em;
+}
 
+.login .rightspan {
+    position: absolute;
+    height: 2.8em;
+    padding-top: 1em;
+    padding: 0.6em;
+    right:3.3em;
+    padding-top: 0.865em;
+    border-radius: 0.4em 0em 0em 0.4em;
+    margin: 0.1em 0 0.1em 0.1em;
+}
+.login input {
+    padding:0 3.4em 0 3.4em;
 }
