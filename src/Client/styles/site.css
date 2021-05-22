@@ -1,13 +1,13 @@
-@font-face {
+﻿@font-face {
     font-family: 'Oxygen-Regular';
-    src: url('../fonts/Oxygen-Regular.ttf') format('truetype'), url('../fonts/Oxygen-Light.ttf') format('truetype'), url('../fonts/Oxygen-Bold.ttf') format('truetype');
+    src: url('Oxygen-Regular.ttf') format('truetype');
 }
 
-/* oxygen-regular - latin */
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
 
 select {
     border-radius: 0 !important;

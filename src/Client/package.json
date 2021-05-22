@@ -1,40 +1,30 @@
 {
-  "name": "chameleon",
+  "name": "chapp",
   "version": "1.0.0",
+  "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "watch": {
-    "build": {
-      "patterns": [
-        "Shared"
-      ],
-      "extensions": "css"
-    }
+    "buildcss": "postcss styles/site.css -o wwwroot/css/site.css"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "@fullhuman/postcss-purgecss": "^4.0.3",
-    "@tailwindcss/postcss7-compat": "^2.0.2",
-    "chart.js": "^3.2.0",
-    "cssnano": "^5.0.1",
-    "daisyui": "^0.21.3",
+    "cssnano": "^5.0.4",
+    "daisyui": "^1.0.0",
     "gulp": "^4.0.2",
     "gulp-postcss": "^9.0.0",
-    "moment": "^2.29.1",
+    "gulp-size": "^4.0.0",
     "postcss-cli": "^8.3.1",
-    "postcss-import": "^14.0.1",
+    "postcss-purgecss": "^2.0.3",
     "precss": "^4.0.0",
-    "tailwindcss": "npm:@tailwindcss/postcss7-compat@^2.0.2",
-    "watch": "^1.0.2"
+    "tailwind": "^4.0.0"
   },
   "devDependencies": {
     "autoprefixer": "^10.2.5",
-    "gulp-size": "^3.0.0",
-    "postcss": "^8.2.13",
+    "cssnano": "^4.1.10",
+    "gulp-brotli": "^3.0.0",
+    "postcss": "^8.3.0",
+    "postcss-cli": "^8.3.0",
     "tailwindcss": "^2.1.2"
-  },
-  "description": ""
+  }
 }

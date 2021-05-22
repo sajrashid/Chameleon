@@ -1,11 +1,19 @@
 ﻿@page "/login"
 
-<div>
+<div class="pt-6 h-full">
     <EditForm Model="@UserCreds" OnValidSubmit="@HandleValidSubmit">
         <DataAnnotationsValidator />
-        <ValidationSummary />
-        <InputText id="name" @bind-Value="UserCreds.Username" />
-        <InputText id="password" @bind-Value="UserCreds.Password" />
+        <div class="bg-base-100 text-base-content bg-neutral text-neutral-content w-20 mx-auto mb-5">
+            <div>
+                <InputText id="name" @bind-Value="UserCreds.Username" />
+            </div>
+            <div>
+                <InputText id="password" @bind-Value="UserCreds.Password" />
+            </div>
+            <div>
+                <ValidationSummary />
+            </div>
+        </div>
         <button type="submit">Submit</button>
     </EditForm>
     <p>@isCredsValid</p>

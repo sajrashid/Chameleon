@@ -8,8 +8,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Chameleon.Server.Migrations
 {
     [DbContext(typeof(SQLiteDBContext))]
-    [Migration("20210521000124_themeprop")]
-    partial class themeprop
+    [Migration("20210521234914_init")]
+    partial class init
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {

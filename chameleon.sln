@@ -9,6 +9,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Chameleon.Client", "src\Cli
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Chameleon.Shared", "src\Shared\Chameleon.Shared.csproj", "{1C0DF3A6-A9E3-4A84-BE77-36541184D8FC}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "IntergrationTests", "tests\IntergrationTests\IntergrationTests.csproj", "{26B73985-271F-4283-B060-34134C0CAB9A}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{1C0DF3A6-A9E3-4A84-BE77-36541184D8FC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1C0DF3A6-A9E3-4A84-BE77-36541184D8FC}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1C0DF3A6-A9E3-4A84-BE77-36541184D8FC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{26B73985-271F-4283-B060-34134C0CAB9A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{26B73985-271F-4283-B060-34134C0CAB9A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{26B73985-271F-4283-B060-34134C0CAB9A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{26B73985-271F-4283-B060-34134C0CAB9A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
