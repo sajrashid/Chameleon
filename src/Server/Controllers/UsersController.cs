@@ -100,10 +100,18 @@ namespace Chameleon.Server.Controllers
                 numBytesRequested: 256 / 8));
              //save password hash in DB
             appUser.Password = hashed;
-            _context.AppUser.Add(appUser);
-            await _context.SaveChangesAsync();
 
-            return CreatedAtAction("GetAppUser", new { id = appUser.Id }, appUser);
+            var userName = await _context.AppUser.FirstOrDefaultAsync(u => u.Username == appUser.Username);
+            if (userName is null)
+            {
+                _context.AppUser.Add(appUser);
+                await _context.SaveChangesAsync();
+                return CreatedAtAction("AppUser", new { id = appUser.Id }, appUser);
+
+            }
+
+            return Conflict();
+
         }
 
         // DELETE: api/Users/5

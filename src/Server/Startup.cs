@@ -25,6 +25,7 @@ namespace Chameleon.Server
             services.AddControllersWithViews();
             services.AddRazorPages();
             services.AddSwaggerGen();
+            services.AddResponseCompression();
             // Register the Swagger generator, defining 1 or more Swagger documents
         }
 
@@ -35,7 +36,6 @@ namespace Chameleon.Server
             {
                 app.UseDeveloperExceptionPage();
                 app.UseWebAssemblyDebugging();
-
                 // Enable middleware to serve swagger-ui (HTML, JS, CSS, etc.),
                 // specifying the Swagger JSON endpoint.
                 app.UseSwagger();
@@ -51,7 +51,7 @@ namespace Chameleon.Server
             {
                 app.UseExceptionHandler("/Error");
             }
-
+            app.UseResponseCompression();
             app.UseBlazorFrameworkFiles();
             app.UseStaticFiles();
 

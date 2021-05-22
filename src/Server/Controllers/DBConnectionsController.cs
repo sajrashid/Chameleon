@@ -25,19 +25,14 @@ namespace Chameleon.Server.Controllers
         public async Task<string> Get()
         {
             string webRootPath = _webHostEnvironment.WebRootPath;
-            string contentRootPath = _webHostEnvironment.ContentRootPath;
-            Console.WriteLine(webRootPath);
-            Console.WriteLine(contentRootPath);
             string jsonString = string.Empty;
             using (var reader = System.IO.File.OpenText(@webRootPath + "\\DbConnection.json"))
             {
                 jsonString = await reader.ReadToEndAsync();
                 // Do something with fileText...
             }
-            Console.WriteLine(jsonString);
-            var s = JsonSerializer.Deserialize<AppSettings>(jsonString);
-
-            return s.StorageOptions.Name;
+            var JsonObj = JsonSerializer.Deserialize<AppSettings>(jsonString);
+            return JsonObj.StorageOptions.Name;
         }
 
         // GET api/<DBConnectionsController>/5

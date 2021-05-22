@@ -27,10 +27,12 @@ namespace Chameleon.Server.Migrations
 
                     b.Property<string>("FirstName")
                         .IsRequired()
+                        .HasMaxLength(16)
                         .HasColumnType("TEXT");
 
                     b.Property<string>("LastName")
                         .IsRequired()
+                        .HasMaxLength(16)
                         .HasColumnType("TEXT");
 
                     b.Property<string>("Password")
@@ -38,11 +40,14 @@ namespace Chameleon.Server.Migrations
                         .HasColumnType("TEXT");
 
                     b.Property<string>("Theme")
+                        .HasMaxLength(24)
                         .HasColumnType("TEXT");
 
                     b.Property<string>("Username")
                         .IsRequired()
-                        .HasColumnType("TEXT");
+                        .HasMaxLength(16)
+                        .HasColumnType("TEXT")
+                        .HasAnnotation("Sqlite:Username", "UNIQUE");
 
                     b.HasKey("Id");
 
@@ -57,14 +62,17 @@ namespace Chameleon.Server.Migrations
 
                     b.Property<string>("Host")
                         .IsRequired()
+                        .HasMaxLength(48)
                         .HasColumnType("TEXT");
 
                     b.Property<string>("Name")
                         .IsRequired()
+                        .HasMaxLength(24)
                         .HasColumnType("TEXT");
 
                     b.Property<string>("Type")
                         .IsRequired()
+                        .HasMaxLength(16)
                         .HasColumnType("TEXT");
 
                     b.HasKey("Id");

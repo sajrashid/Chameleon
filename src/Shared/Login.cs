@@ -11,9 +11,11 @@ namespace Chameleon.Shared
     {
 
         [Required]
+        [MinLength(6, ErrorMessage = "UserName nust be a minimum of 6 characters!")]
         public string Username { get; set; }
 
         [Required]
+        [MinLength(6,ErrorMessage="Password nust be a minimum of 8 characters!")]
         public string Password { get; set; }
     }
 }

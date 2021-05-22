@@ -2,7 +2,7 @@
 
 namespace Chameleon.Server.Migrations
 {
-    public partial class init : Migration
+    public partial class uniqueConstraints : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -12,12 +12,12 @@ namespace Chameleon.Server.Migrations
                 {
                     Id = table.Column<int>(type: "INTEGER", nullable: false)
                         .Annotation("Sqlite:Autoincrement", true),
-                    FirstName = table.Column<string>(type: "TEXT", nullable: false),
-                    LastName = table.Column<string>(type: "TEXT", nullable: false),
-                    Username = table.Column<string>(type: "TEXT", nullable: false),
+                    FirstName = table.Column<string>(type: "TEXT", maxLength: 16, nullable: false),
+                    LastName = table.Column<string>(type: "TEXT", maxLength: 16, nullable: false),
+                    Username = table.Column<string>(type: "TEXT", maxLength: 16, nullable: false),
                     Email = table.Column<string>(type: "TEXT", nullable: false),
                     Password = table.Column<string>(type: "TEXT", nullable: false),
-                    Theme = table.Column<string>(type: "TEXT", nullable: true)
+                    Theme = table.Column<string>(type: "TEXT", maxLength: 24, nullable: true)
                 },
                 constraints: table =>
                 {
@@ -30,9 +30,9 @@ namespace Chameleon.Server.Migrations
                 {
                     Id = table.Column<int>(type: "INTEGER", nullable: false)
                         .Annotation("Sqlite:Autoincrement", true),
-                    Name = table.Column<string>(type: "TEXT", nullable: false),
-                    Type = table.Column<string>(type: "TEXT", nullable: false),
-                    Host = table.Column<string>(type: "TEXT", nullable: false)
+                    Name = table.Column<string>(type: "TEXT", maxLength: 24, nullable: false),
+                    Type = table.Column<string>(type: "TEXT", maxLength: 16, nullable: false),
+                    Host = table.Column<string>(type: "TEXT", maxLength: 48, nullable: false)
                 },
                 constraints: table =>
                 {

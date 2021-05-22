@@ -78,10 +78,18 @@ namespace Chameleon.Server.Controllers
         [HttpPost]
         public async Task<ActionResult<Machine>> PostMachine(Machine machine)
         {
-            _context.Machines.Add(machine);
-            await _context.SaveChangesAsync();
+            // test is Machine name exists
+            var name = machine.Name;
+            var machineName = await _context.Machines.FirstOrDefaultAsync(u => u.Name == name);
+            if (machineName is null)
+            {
+                _context.Machines.Add(machine);
+                await _context.SaveChangesAsync();
 
-            return CreatedAtAction("GetMachine", new { id = machine.Id }, machine);
+                return CreatedAtAction("GetMachine", new { id = machine.Id }, machine);
+            }
+
+            return Conflict();
         }
 
         // DELETE: api/Machines/5

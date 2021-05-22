@@ -21,16 +21,18 @@
                 {
                     if (item != null)
                     {
-            <tr class="pb-3 bg-base-200 border-b border-current border-neutral-focus border-opacity-5" draggable="true" @key="item.Id" tabindex="1"
+            <tr class="border-0 border-solid pb-3 bg-base-200 border-neutral-focus border-opacity-8" draggable="true" @key="item.Id" tabindex="1"
                 @ondrop="@(()=> Drop(item))" @ondrag="@(()=> StartDrag(item))">
                 @*<td>1 @item.Id</td>*@
+                <td class="p-2"><input type="checkbox" name="name" value="checked" /></td>
                 <td class="p-2">@item.Name</td>
                 <td class="p-2">@item.Type</td>
+
             </tr>
                     }
                     else
                     {
-            <tr class="bg-base-100 border-b border-current ">
+            <tr class="border-0 border-solid bg-base-100 border-b border-current ">
                 <td>NULL??</td>
                 <td>NULL??</td>
                 <td>NULL??</td>

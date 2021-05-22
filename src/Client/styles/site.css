@@ -3,7 +3,6 @@
     src: url('../fonts/Oxygen-Regular.ttf') format('truetype'), url('../fonts/Oxygen-Light.ttf') format('truetype'), url('../fonts/Oxygen-Bold.ttf') format('truetype');
 }
 
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -15,8 +14,8 @@ select {
 
 .sqrbtn {
     border-radius: 0 !important;
-    height: 2.2rem !important;
-    min-height: 2.2rem !important;
+    height: 3rem !important;
+    min-height: 3rem !important;
 }
 
 #blazor-error-ui {
@@ -46,4 +45,18 @@ body {
     font-family: 'Oxygen-Regular', 'Segoe UI';
     height: 100%;
     overflow-x: hidden;
+}
+
+div  .invalid {
+    border: solid red;
+}
+div .valid {
+    border: none;
+}
+div  .validation-errors {
+    color:darkred;
+    font-size:0.9rem;
+}
+div  .modified {
+
 }

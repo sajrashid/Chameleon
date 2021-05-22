@@ -28,7 +28,6 @@ namespace Chameleon.Server.Controllers
         public async Task<ActionResult>  Get()
         {
             var ListFiles = new List<UploadedFiles>();
-            //https://www.mikesdotnetting.com/article/302/server-mappath-equivalent-in-asp-net-core
             var path = _env.WebRootPath;
             try
             {

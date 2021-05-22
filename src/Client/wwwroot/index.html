@@ -8,17 +8,6 @@
     <base href="/" />
     <link href="css/site.css" rel="stylesheet" />
     <link href="Chameleon.Client.styles.css" rel="stylesheet" />
-    <script src="_content/BlazorInputFile/inputfile.js"></script>
-    <script>
-        function CSMethod() {
-            //     DotNet.invokeMethodAsync("Chameleon", "ChangeSideBarCssClass")
-
-        }
-        window.changeTheme = (selectedTheme) => {
-            var selector = document.getElementsByTagName('html')[0];
-            selector.setAttribute('data-theme', selectedTheme);
-        }
-    </script>
 </head>
 
 <body class="min-h-screen bg-base-300 text-base-content;">
@@ -29,6 +18,13 @@
         <a href="" class="reload">Reload</a>
         <a class="dismiss">🗙</a>
     </div>
+    <script>
+        window.changeTheme = (selectedTheme) => {
+            var selector = document.getElementsByTagName('html')[0];
+            selector.setAttribute('data-theme', selectedTheme);
+        }
+    </script>
+    <script src="_content/BlazorInputFile/inputfile.js"></script>
     <script src="_framework/blazor.webassembly.js"></script>
 </body>
 </html>

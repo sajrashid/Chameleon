@@ -8,7 +8,7 @@
     <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly.Server" Version="6.0.0-preview.3.21201.13" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Sqlite" Version="6.0.0-preview.3.21201.2" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="6.0.0-preview.3.21201.2" />
-	  <PackageReference Include="Swashbuckle.AspNetCore" Version="6.1.4"/>
+	  <PackageReference Include="Swashbuckle.AspNetCore" Version="6.1.4" />
 		  <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="6.0.0-preview.3.21201.2">
 			<PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
@@ -20,6 +20,10 @@
   <ItemGroup>
     <ProjectReference Include="..\Client\Chameleon.Client.csproj" />
     <ProjectReference Include="..\Shared\Chameleon.Shared.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Migrations\" />
   </ItemGroup>
 
 
