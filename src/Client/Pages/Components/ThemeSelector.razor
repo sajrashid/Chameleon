@@ -2,7 +2,7 @@
 @inject IJSRuntime JS
 
 <EditForm Model="theme">
-    <InputSelect @bind-Value="theme.selectedTheme" @oninput="onThemeChange"  class="shadow-md bg-base-200 text-base-content bg-neutral text-neutral-content w-full select selectTheme" >
+    <InputSelect @bind-Value="theme.selectedTheme" @oninput="onThemeChange" class="shadow-md bg-base-200 text-base-content bg-neutral text-neutral-content w-full select selectTheme">
         @foreach (var item in theme.ThemeList)
         {
             <option value=@item.Value>@item.Name</option>
@@ -15,9 +15,9 @@
 
     public async Task onThemeChange(ChangeEventArgs e)
     {
-       var Value = e.Value.ToString();
+        var Value = e.Value.ToString();
         await JS.InvokeAsync<object>("changeTheme", Value);
 
     }
-   
+
 }

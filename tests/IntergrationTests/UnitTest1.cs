@@ -21,7 +21,6 @@ namespace IntergrationTests
         [InlineData("/api/blah")]
         [InlineData("/FetchData")]
         [InlineData("/api/machines")]
-      
         public async Task Get_EndpointsReturnSuccessAndCorrectContentType(string url)
         {
             var clientOptions = new WebApplicationFactoryClientOptions();

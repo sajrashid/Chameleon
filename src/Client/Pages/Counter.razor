@@ -6,13 +6,13 @@
 <p>Selected Theme : @FormThemes.selectedTheme</p>
 
 <button class="btn btn-primary" @onclick="IncrementCount">Click me</button>
-
+yo aa
 <div>
     <EditForm Model="FormThemes">
         <InputSelect @bind-Value="FormThemes.selectedTheme">
             @foreach (var value in Enum.GetValues(typeof(ThemesEnum)))
             {
-            <option>@value</option>
+                <option>@value</option>
             }
         </InputSelect>
     </EditForm>
@@ -27,7 +27,7 @@
     {
         selectedTheme = FormThemes.selectedTheme.ToString();
         Console.WriteLine(selectedTheme);
-        currentCount++;
+        currentCount = currentCount +1;
     }
 
     public class Theme
@@ -40,7 +40,7 @@
         Dark,
         Space,
         Mellow,
+        Red,
     }
-
 
 }

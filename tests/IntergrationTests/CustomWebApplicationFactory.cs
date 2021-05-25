@@ -1,12 +1,12 @@
-﻿using System;
-using System.Linq;
+﻿using Chameleon.Server.DBContext;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc.Testing;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
-using Chameleon.Server.DBContext;
 using RazorPagesProject.Tests;
+using System;
+using System.Linq;
 
 namespace IntergrationTests
 {

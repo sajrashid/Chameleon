@@ -1,14 +1,11 @@
-﻿using Microsoft.AspNetCore.Mvc;
-using Newtonsoft.Json;
+﻿using Chameleon.Shared;
+using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
 using System.IO;
-using System.Linq;
-using System.Net;
-using System.Net.Http;
 using System.Threading.Tasks;
-using Microsoft.AspNetCore.Hosting;
-using Chameleon.Shared;
+
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
 namespace Chameleon.Server.Controllers
@@ -18,20 +15,23 @@ namespace Chameleon.Server.Controllers
     public class FileSystemController : ControllerBase
     {
         private IWebHostEnvironment _env;
+
         public FileSystemController(IWebHostEnvironment env)
         {
             _env = env;
         }
+
         //
         // GET: api/<FileSystemController>
         [HttpGet]
-        public async Task<ActionResult>  Get()
+        public async Task<ActionResult> Get()
         {
             var ListFiles = new List<UploadedFiles>();
             var path = _env.WebRootPath;
             try
             {
-                await Task.Run(() => {
+                await Task.Run(() =>
+                {
                     var Counter = 0;
                     DirectoryInfo Dir = new DirectoryInfo(path);
                     FileInfo[] FileList = Dir.GetFiles("*.*", SearchOption.AllDirectories);
@@ -45,20 +45,17 @@ namespace Chameleon.Server.Controllers
                         ListFiles.Add(File);
                         File.Id = Counter;
                         Counter++;
-
                     }
                 });
             }
             catch (Exception ex)
             {
                 return BadRequest(ex.Message);
-
             }
             return Ok(ListFiles);
         }
 
         // GET api/<FileSystemController>/5
-        
 
         // POST api/<FileSystemController>
         [HttpPost]

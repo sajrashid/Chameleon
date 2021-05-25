@@ -1,12 +1,8 @@
 ﻿using Chameleon.Server.DBContext;
-using Chameleon.Shared;
 using Microsoft.AspNetCore.Cryptography.KeyDerivation;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Security.Cryptography;
 using System.Threading.Tasks;
 
@@ -45,17 +41,15 @@ namespace Chameleon.Server.Controllers
 
             var appUser = await _context.AppUser.FirstOrDefaultAsync(u => u.Username == username);
 
-
-            if (appUser is not null )
+            if (appUser is not null)
             {
                 if (appUser.Password == hashed)
                 {
                     return true;
                 }
             }
-          
+
             return false;
         }
-
     }
 }

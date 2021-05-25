@@ -1,7 +1,6 @@
 ﻿using Chameleon.Shared;
 using Microsoft.AspNetCore.Mvc;
 
-
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
 namespace Chameleon.Server.Controllers
@@ -19,12 +18,10 @@ namespace Chameleon.Server.Controllers
             return Hello;
         }
 
-
         //[HttpGet]
         //public ActionResult Gete()
         //{
         //    return new StatusCodeResult(200);
         //}
-
     }
 }

@@ -1,14 +1,13 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Http;
+﻿using Chameleon.Server.DBContext;
+using Chameleon.Shared;
+using Microsoft.AspNetCore.Cryptography.KeyDerivation;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
-using Chameleon.Server.DBContext;
-using Chameleon.Shared;
+using System;
+using System.Collections.Generic;
+using System.Linq;
 using System.Security.Cryptography;
-using Microsoft.AspNetCore.Cryptography.KeyDerivation;
+using System.Threading.Tasks;
 
 namespace Chameleon.Server.Controllers
 {
@@ -80,7 +79,6 @@ namespace Chameleon.Server.Controllers
         [HttpPost]
         public async Task<ActionResult<AppUser>> PostAppUser(AppUser appUser)
         {
-
             var password = appUser.Password;
 
             // generate a 128-bit salt using a secure PRNG
@@ -98,7 +96,7 @@ namespace Chameleon.Server.Controllers
                 prf: KeyDerivationPrf.HMACSHA1,
                 iterationCount: 10000,
                 numBytesRequested: 256 / 8));
-             //save password hash in DB
+            //save password hash in DB
             appUser.Password = hashed;
 
             var userName = await _context.AppUser.FirstOrDefaultAsync(u => u.Username == appUser.Username);
@@ -107,11 +105,9 @@ namespace Chameleon.Server.Controllers
                 _context.AppUser.Add(appUser);
                 await _context.SaveChangesAsync();
                 return CreatedAtAction("AppUser", new { id = appUser.Id }, appUser);
-
             }
 
             return Conflict();
-
         }
 
         // DELETE: api/Users/5

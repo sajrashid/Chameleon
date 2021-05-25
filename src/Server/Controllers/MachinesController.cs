@@ -1,12 +1,10 @@
-﻿using System;
+﻿using Chameleon.Server.DBContext;
+using Chameleon.Shared;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
-using Chameleon.Server.DBContext;
-using Chameleon.Shared;
 
 namespace Chameleon.Server.Controllers
 {

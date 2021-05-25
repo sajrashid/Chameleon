@@ -23,12 +23,10 @@ namespace Chameleon.Client.Pages.Components
                     new Theme ("pastel", "🖍 pastel"),
                     new Theme ("forest", "🧚‍♀️ forest"),
                     new Theme ("luxury", "💎 luxury"),
-
             };
+
         public string selectedTheme { get; set; } = "cupcake";
     }
-
-  
 
     public class Theme
     {
@@ -37,8 +35,8 @@ namespace Chameleon.Client.Pages.Components
             Value = value;
             Name = name;
         }
+
         public string Value { get; set; }
         public string Name { get; set; }
-
     }
 }

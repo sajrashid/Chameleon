@@ -1,12 +1,13 @@
-﻿using System.Collections.Generic;
-using Chameleon.Server.DBContext;
+﻿using Chameleon.Server.DBContext;
 using Chameleon.Shared;
+using System.Collections.Generic;
 
 namespace RazorPagesProject.Tests
 {
     public static class Utilities
     {
         #region snippet1
+
         public static void InitializeDbForTests(SQLiteDBContext db)
         {
             db.Machines.AddRange(GetSeedingMessages());
@@ -29,6 +30,7 @@ namespace RazorPagesProject.Tests
                     "nothing is inexplicable; only unexplained." }
             };
         }
-        #endregion
+
+        #endregion snippet1
     }
 }

@@ -1,0 +1,25 @@
+﻿@inherits InputText
+
+
+<input @attributes="AdditionalAttributes"
+       class="@CssClass"
+       @bind="CurrentValueAsString"
+       @bind:event="oninput"
+       @ref="_inputReference" />
+
+
+@code  {
+    [Parameter] public bool SetFocus { get; set; } = false;
+    private ElementReference _inputReference;
+
+    protected async override Task OnAfterRenderAsync(bool firstRender)
+    {
+        if (firstRender && SetFocus==true)
+        {
+            await _inputReference.FocusAsync();
+        }
+
+        await base.OnAfterRenderAsync(firstRender);
+    }
+
+}

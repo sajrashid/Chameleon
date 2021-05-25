@@ -1,8 +1,8 @@
-﻿using System;
+﻿using AngleSharp.Html.Dom;
+using System;
 using System.Collections.Generic;
 using System.Net.Http;
 using System.Threading.Tasks;
-using AngleSharp.Html.Dom;
 using Xunit;
 
 namespace RazorPagesProject.Tests.Helpers
