@@ -11,7 +11,6 @@ namespace Chameleon.Client.Pages.Login
     public partial class PasswordReset
     {
         [Inject]
-
         private HttpClient Http { get; set; }
 
         public List<AppUser> Users { get; set; } = new List<AppUser>();

@@ -19,9 +19,9 @@
             public string TextValue = "Some Random Text";
         }
 
-        public InputTextClass inputText = new InputTextClass();
+        public InputTextClass inputText = new();
 
-        public async Task BtnApiTestClick()
+        public async void BtnApiTestClick()
         {
             var url = inputText.TextValue;
             var HELLO = new HelloWorld();

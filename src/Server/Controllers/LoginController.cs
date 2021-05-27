@@ -21,7 +21,7 @@ namespace Chameleon.Server.Controllers
 
         // GET: api/Users
         [HttpGet("{username}")]
-        public async Task<ActionResult<bool>> GetAppUser(string username, string password)
+        public async Task<ActionResult<bool>> GetAppUser(string email, string password)
         {
             // generate a 128-bit salt using a secure PRNG
             byte[] salt = new byte[128 / 8];
@@ -39,7 +39,7 @@ namespace Chameleon.Server.Controllers
                 numBytesRequested: 256 / 8));
             //save password hash in DB
 
-            var appUser = await _context.AppUser.FirstOrDefaultAsync(u => u.Username == username);
+            var appUser = await _context.AppUser.FirstOrDefaultAsync(u => u.Email == email);
 
             if (appUser is not null)
             {

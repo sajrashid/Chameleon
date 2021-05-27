@@ -22,7 +22,7 @@ namespace Chameleon.Client.Pages.Login
 
         private void UpdateUsers(AppUser users)
         {
-            Console.WriteLine(users.Username);
+            Console.WriteLine(users.Email);
         }
     }
 

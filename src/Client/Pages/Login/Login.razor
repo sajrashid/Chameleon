@@ -1,10 +1,18 @@
 ﻿@page "/login"
 
-<UserComp ApiUrl="api/login/"
-          Title="Login"
-          Link1Title="Don't have an account "
-          Link1Text="Create"
-          Link1Href="/createUser"
-          Link2Title="Forgot password?"
-          Link2Text="Click Here"
-          Link2Href="/passwordReset" />
+<UserComp Options=options />
+
+
+@code{
+    UserOptions options = new UserOptions
+    {
+        ApiUrl = "api/login/",
+        Title = "Login",
+        Link1Title = "Don't have an account ",
+        Link1Text = "Create",
+        Link1Href = "/createUser",
+        Link2Title = "Forgot password?",
+        Link2Text = "Click Here",
+        Link2Href = "/passwordReset",
+    };
+}

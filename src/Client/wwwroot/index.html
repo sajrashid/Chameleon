@@ -23,6 +23,12 @@
             var selector = document.getElementsByTagName('html')[0];
             selector.setAttribute('data-theme', selectedTheme);
         }
+        window.getLs=(name) => {
+           return localStorage.getItem(name);
+        }
+        window.setLs = (name, value) => {
+            return localStorage.setItem(name,value);
+        }
     </script>
     <script src="_content/BlazorInputFile/inputfile.js"></script>
     <script src="_framework/blazor.webassembly.js"></script>

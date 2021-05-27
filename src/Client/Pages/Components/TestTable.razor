@@ -1,0 +1,79 @@
+﻿@page "/testTable"
+<EditForm Model="@ListUsers" OnValidSubmit="@HandleValidSubmit">
+    <table class="table">
+        <thead>
+            <tr>
+                @if (properties is not null)
+                {
+                    @foreach (var prop in properties)
+                    {
+                        <th scope="col" class="text-center">@prop.Name</th>
+                    }
+                }
+            </tr>
+        </thead>
+
+        <tbody>
+            @if (ListUsers is not null)
+            {
+                @foreach (var comp in ListUsers)
+                {
+            <tr class="text-center">
+                @foreach (var prop in properties)
+                {
+                    System.TypeCode typeCode = Type.GetTypeCode(prop.PropertyType);
+
+                    @switch (typeCode)
+                    {
+                        case TypeCode.String:
+                            var textVal = @prop.GetValue(comp, null).ToString();
+                            <td>
+                                <InputText class="text-center input input-bordered" type="text" @bind-Value=@textVal> </InputText>
+
+                            </td>
+                            break;
+
+                        case TypeCode.Boolean:
+                        case TypeCode.Int32:
+                            var intVal = @prop.GetValue(comp, null).ToString();
+                            <td>
+                                <InputText class="input input-bordered" type="number" @bind-Value=@intVal> </InputText>
+                            </td>
+                            break;
+                        case TypeCode.DateTime:
+                            var dateVal = @prop.GetValue(comp, null).ToString();
+                            <td>
+                                <InputDate class="input input-bordered" type="number" @bind-Value=@dateVal> </InputDate>
+                            </td>
+                            break;
+                        case TypeCode.Decimal:
+                            var decVal = @prop.GetValue(comp, null).ToString();
+                            <td>
+                                <InputText class="input input-bordered" type="number" @bind-Value=@decVal> </InputText>
+                            </td>
+                            break;
+                        case TypeCode.DBNull:
+                            var nullVal = "";
+                            <td>
+                                <InputText class="input input-bordered" type="text" @bind-Value=@nullVal> </InputText>
+                            </td>
+                            break;
+                        default:
+                            var defal = @prop.GetValue(comp, null).ToString();
+                            <td>
+                                <InputText class="text-center input input-bordered" type="text" @bind-Value=@defal> </InputText>
+
+                            </td>
+                            break;
+                    }
+
+
+                }
+            </tr>
+                }
+            }
+        </tbody>
+    </table>
+</EditForm>
+<div >hello you</div>
+

@@ -1,7 +1,29 @@
 ﻿@inherits LayoutComponentBase
+@inject IJSRuntime JS
 <div class="page bg-base-300 text-base-content">
     <NavMenu />
     <div class="h-full">
         @Body
     </div>
 </div>
+@code{
+    private object lsTheme { get; set; } = null;
+    protected override async Task OnInitializedAsync()
+    {
+        try
+        {
+            lsTheme = await JS.InvokeAsync<object>
+           ("getLs", "theme");
+        }
+        catch (Exception)
+        {
+            lsTheme = await JS.InvokeAsync<object>
+            ("setLs", "theme", "auto");
+
+        }
+        await JS.InvokeAsync<object>
+            ("changeTheme", lsTheme);
+        Console.WriteLine("saved theme:" + lsTheme);
+
+    }
+}

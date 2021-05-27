@@ -2,7 +2,7 @@
     <EditForm Model="@UserCreds" OnValidSubmit="@HandleValidSubmit">
         <DataAnnotationsValidator />
         <div class="p-10 card bg-base-200 m-6 mx-auto w-4/5 md:w-3/5 lg:w-2/5 ">
-            <div class="p-4 mx-auto mb-6"><h1 class="text-3xl">@Title</h1></div>
+            <div class="p-4 mx-auto mb-6"><h1 class="text-3xl">@Options.Title</h1></div>
             <div class="login form-control form-group mt-4 w-full">
                 <span class="leftspan bg-base-300">
                     <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
@@ -66,18 +66,18 @@
                     <div>
                         <div class="whitespace-nowrap w-full float-right sm:float-left">
                             <span>
-                                @Link1Title
-                                <a class="inline-block align-baseline text-sm link link-accent" href=@Link1Href>
-                                    @Link1Text
+                                @Options.Link1Title
+                                <a class="inline-block align-baseline text-sm link link-accent" href=@Options.Link1Href>
+                                    @Options.Link1Text
                                 </a>
                             </span>
                         
                         </div>
                         <div class="whitespace-nowrap w-full float-right sm:float-left">
                             <span>
-                                @Link2Title
-                                <a class="pr-3 inline-block align-baseline text-sm link link-secondary" href=@Link2Href>
-                                    @Link2Text
+                                @Options.Link2Title
+                                <a class="pr-3 inline-block align-baseline text-sm link link-secondary" href=@Options.Link2Href>
+                                    @Options.Link2Text
                                 </a>
                             </span>
                         </div>
@@ -88,6 +88,6 @@
             </div>
         </div>
     </EditForm>
-    <p>@isCredsValid</p>
+    <p>@IsCredsValid</p>
 </div>
 

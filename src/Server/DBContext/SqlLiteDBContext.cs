@@ -5,6 +5,12 @@ namespace Chameleon.Server.DBContext
 {
     public class SQLiteDBContext : DbContext
     {
+        public SQLiteDBContext(DbContextOptions<SQLiteDBContext> options)
+           : base(options)
+        {
+        }
+
+
         public DbSet<Machine> Machines { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder options)
@@ -16,18 +22,6 @@ namespace Chameleon.Server.DBContext
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            modelBuilder.Entity<AppUser>()
-                .Property(b => b.FirstName)
-                .IsRequired()
-                .HasMaxLength(16);
-            modelBuilder.Entity<AppUser>()
-               .Property(b => b.LastName)
-               .IsRequired()
-               .HasMaxLength(16);
-            modelBuilder.Entity<AppUser>()
-                .Property(b => b.Username)
-                .IsRequired()
-                .HasMaxLength(16);
             modelBuilder.Entity<AppUser>()
                .Property(b => b.Theme)
                .HasMaxLength(24);

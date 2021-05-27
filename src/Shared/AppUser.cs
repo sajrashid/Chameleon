@@ -8,15 +8,6 @@ namespace Chameleon.Shared
         public int Id { get; set; }
 
         [Required]
-        public String FirstName { get; set; }
-
-        [Required]
-        public String LastName { get; set; }
-
-        [Required]
-        public string Username { get; set; }
-
-        [Required]
         public String Email { get; set; }
 
         [Required]

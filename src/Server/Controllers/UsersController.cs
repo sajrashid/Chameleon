@@ -99,7 +99,7 @@ namespace Chameleon.Server.Controllers
             //save password hash in DB
             appUser.Password = hashed;
 
-            var userName = await _context.AppUser.FirstOrDefaultAsync(u => u.Username == appUser.Username);
+            var userName = await _context.AppUser.FirstOrDefaultAsync(u => u.Email == appUser.Email);
             if (userName is null)
             {
                 _context.AppUser.Add(appUser);

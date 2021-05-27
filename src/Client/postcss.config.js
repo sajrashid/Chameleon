@@ -5,6 +5,9 @@ module.exports = {
         require('autoprefixer'),
         cssnano({
             preset: 'default'
-        })
+        }),
+        {
+            'postcss-windicss': { /* ... */ },
+        }
     ]
 }

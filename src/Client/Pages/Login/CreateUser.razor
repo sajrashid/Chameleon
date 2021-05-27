@@ -1,8 +1,15 @@
 ﻿@page "/createUser"
 
-    <UserComp 
-              ApiUrl="api/createUser/"
-              Title="Create" 
-              Link1Title="Already have an account "
-              Link1Text="Login" 
-              Link1Href="/login" />
+<UserComp Options=options />
+
+
+@code{
+    UserOptions options = new UserOptions
+    {
+        ApiUrl = "api/createUser/",
+        Title = "Create",
+        Link1Title = "Already have an account ",
+        Link1Text = "Login",
+        Link1Href = "/login",
+    };
+}

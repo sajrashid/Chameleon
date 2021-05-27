@@ -15,19 +15,8 @@ namespace Chameleon.Client.Pages.Login
         [Inject]
         private HttpClient Http { get; set; }
 
-        [Parameter] public string Title { get; set; }
-        [Parameter] public string Link1Title { get; set; }
-        [Parameter] public string Link1Text { get; set; }
-        [Parameter] public string Link1Href { get; set; }
-
-        [Parameter] public string Link2Title { get; set; }
-
-        [Parameter] public string Link2Text { get; set; }
-        [Parameter] public string Link2Href { get; set; }
-
-        [Parameter] public string ApiUrl { get; set; }
-
-        private bool isCredsValid { get; set; } = false;
+        [Parameter] public UserOptions Options { get; set; }
+        private bool IsCredsValid { get; set; } = false;
         public UserCredentials UserCreds { get; set; } = new UserCredentials();
         public string TxtType = "password";
 
@@ -57,7 +46,7 @@ namespace Chameleon.Client.Pages.Login
             var Email = UserCreds.Email;
             if (IsValidEmail(Email)  && password.Length > 7)
             {
-                isCredsValid = await Http.GetFromJsonAsync<bool>("api/login/" + UserCreds.Email + "?password=" + password);
+                IsCredsValid = await Http.GetFromJsonAsync<bool>("api/login/" + UserCreds.Email + "?password=" + password);
                 Console.WriteLine(UserCreds.Email + " :" + UserCreds.Password);
             }
             // generate a 128-bit salt using a secure PRNG
@@ -77,4 +66,22 @@ namespace Chameleon.Client.Pages.Login
             }
         }
     }
+
+    public class UserOptions
+    {
+       public string Title { get; set; }
+       public string Link1Title { get; set; }
+       public string Link1Text { get; set; }
+       public string Link1Href { get; set; }
+
+       public string Link2Title { get; set; }
+
+       public string Link2Text { get; set; }
+       public string Link2Href { get; set; }
+
+       public string ApiUrl { get; set; }
+
+    }
+
+
 }

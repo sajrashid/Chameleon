@@ -4,6 +4,7 @@ namespace Chameleon.Client.Pages.Components
 {
     public class Themes
     {
+  
         public List<Theme> ThemeList { get; set; } = new List<Theme>()
             {
                     new Theme ("auto", "🎨 auto"),
@@ -25,7 +26,7 @@ namespace Chameleon.Client.Pages.Components
                     new Theme ("luxury", "💎 luxury"),
             };
 
-        public string selectedTheme { get; set; } = "cupcake";
+        public string SelectedTheme { get; set; } = "cupcake";
     }
 
     public class Theme
