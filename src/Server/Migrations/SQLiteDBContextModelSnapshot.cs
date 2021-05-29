@@ -13,7 +13,7 @@ namespace Chameleon.Server.Migrations
         {
 #pragma warning disable 612, 618
             modelBuilder
-                .HasAnnotation("ProductVersion", "6.0.0-preview.4.21253.1");
+                .HasAnnotation("ProductVersion", "6.0.0-preview.3.21201.2");
 
             modelBuilder.Entity("Chameleon.Shared.AppUser", b =>
                 {
@@ -36,6 +36,36 @@ namespace Chameleon.Server.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("AppUser");
+                });
+
+            modelBuilder.Entity("Chameleon.Shared.GlbModel", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("INTEGER");
+
+                    b.Property<string>("Alt")
+                        .IsRequired()
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("ModelId")
+                        .IsRequired()
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("Src")
+                        .IsRequired()
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("Style")
+                        .HasColumnType("TEXT");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("GlbModel");
                 });
 
             modelBuilder.Entity("Chameleon.Shared.Machine", b =>

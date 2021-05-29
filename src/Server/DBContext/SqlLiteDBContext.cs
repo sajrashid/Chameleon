@@ -18,6 +18,9 @@ namespace Chameleon.Server.DBContext
 
         public DbSet<AppUser> AppUser { get; set; }
 
+        public DbSet<GlbModel> GlbModel { get; set; }
+
+
         #region Required
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
