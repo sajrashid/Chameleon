@@ -5,13 +5,13 @@ VisualStudioVersion = 16.0.31313.381
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Chameleon.Server", "src\Server\Chameleon.Server.csproj", "{FBAF559B-DDF8-4BAA-AC30-91C5F7C7A4D4}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Chameleon.Client", "src\Client\Chameleon.Client.csproj", "{0C96F0CF-E335-429C-A256-29F07F88DC02}"
-EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Chameleon.Shared", "src\Shared\Chameleon.Shared.csproj", "{1C0DF3A6-A9E3-4A84-BE77-36541184D8FC}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "IntergrationTests", "tests\IntergrationTests\IntergrationTests.csproj", "{26B73985-271F-4283-B060-34134C0CAB9A}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Test", "tests\Test\Test.csproj", "{B5B66418-03AE-4770-814C-967F753754D9}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Chameleon.Client", "src\Client\Chameleon.Client.csproj", "{2EC8A165-408D-430F-93F6-060263358611}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -23,10 +23,6 @@ Global
 		{FBAF559B-DDF8-4BAA-AC30-91C5F7C7A4D4}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FBAF559B-DDF8-4BAA-AC30-91C5F7C7A4D4}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FBAF559B-DDF8-4BAA-AC30-91C5F7C7A4D4}.Release|Any CPU.Build.0 = Release|Any CPU
-		{0C96F0CF-E335-429C-A256-29F07F88DC02}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{0C96F0CF-E335-429C-A256-29F07F88DC02}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{0C96F0CF-E335-429C-A256-29F07F88DC02}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{0C96F0CF-E335-429C-A256-29F07F88DC02}.Release|Any CPU.Build.0 = Release|Any CPU
 		{1C0DF3A6-A9E3-4A84-BE77-36541184D8FC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{1C0DF3A6-A9E3-4A84-BE77-36541184D8FC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1C0DF3A6-A9E3-4A84-BE77-36541184D8FC}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -39,6 +35,10 @@ Global
 		{B5B66418-03AE-4770-814C-967F753754D9}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B5B66418-03AE-4770-814C-967F753754D9}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B5B66418-03AE-4770-814C-967F753754D9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2EC8A165-408D-430F-93F6-060263358611}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2EC8A165-408D-430F-93F6-060263358611}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2EC8A165-408D-430F-93F6-060263358611}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2EC8A165-408D-430F-93F6-060263358611}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -1,57 +1,58 @@
 ﻿@page "/"
+<div ondragover="event.preventDefault();">
+   @if (ListComp != null){
+       {
+            var c=0;
+            var b = 0;
+            <div class="w-full">
+             <div class="lg:w-2/4 w-full pl-4 pr-2 pt-4 float-left">
+               @foreach (var item in ListComp)
+                {
+               
+                     
+                    @if (c < 3)
+                    {
+                    
+                       
+                             <div id="@item.Id"  @key="@item.Id"  draggable="true" class="@dropClass @item.DropEnterCss shadow-md bg-base-200 mb-4"
+                                  @ontouchleave="@(()=> DragLeave(item))"  @ondragleave="@(()=> DragLeave(item))"
+                                  
+                                  @ontouchenter="@(()=> DragEnter(item))"  @ondragenter="@(()=> DragEnter(item))"
+                                  
+                                  @ontouchstart="@(()=> StartDrag(item))" @ondrag="@(()=> StartDrag(item))"
+                                  
+                                  @ontouchend="@(()=> Drop(item))"    @ondrop="@(()=> Drop(item))" >
+                                 <DynamicComponent Type="@item.MyComp" />
+                            </div>
+                            
+                    }
+                        c++; 
+              }
+              </div>
+            
+             <div class="lg:w-2/4 w-full pl-4 pr-2 pt-4 float-left">
+                @foreach (var item in ListComp)
+                {
+                     
+                    @if (b >2)
+                    {
+                    
+           
+                             
+                                  <div id="@item.Id"  @key="@item.Id"  draggable="true" class="@dropClass @item.DropEnterCss shadow-md bg-base-200 mb-4"
+                                        @ondragleave="@(()=> DragLeave(item))"  @ondragenter="@(()=> DragEnter(item))" @ondrop="@(()=> Drop(item))" @ondrag="@(()=> StartDrag(item))">
+                                        <DynamicComponent Type="@item.MyComp" />
+         
+                                   </div>
+                           
+                              
+                    }
+                     b++;
+               }
+               </div>
+        </div>
+               }
+   }
+ </div>
 
-<div class="ml-4 mt-4 mr-4 h-full ">
-    <div class="grid sm-grid-cols-1 gap-4 md:grid-cols-2 gap-4">
-        <div class="shadow-md bg-base-200 text-base-content bg-neutral text-neutral-content">
-            <div class="bg-base-100 p-2 align-bottom mb-2">
-                <span class="align-middle inline-block p-0">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 " fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zm0 0h12a2 2 0 002-2v-4a2 2 0 00-2-2h-2.343M11 7.343l1.657-1.657a2 2 0 012.828 0l2.829 2.829a2 2 0 010 2.828l-8.486 8.485M7 17h.01" />
-                    </svg>
-                </span>
-                Printer
-                <span class="align-middle inline-block p-0 absolute right-0 ">D</span>
-            </div>
-            <div class="pl-3 pr-3 p-3">
-            </div>
-        </div>
-        <div class="shadow-md bg-base-200 text-base-content bg-neutral text-neutral-content">
-            <div class="bg-base-100 p-2 align-bottom mb-2">
-                <span class="align-middle inline-block p-0">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11.049 2.927c.3-.921 1.603-.921 1.902 0l1.519 4.674a1 1 0 00.95.69h4.915c.969 0 1.371 1.24.588 1.81l-3.976 2.888a1 1 0 00-.363 1.118l1.518 4.674c.3.922-.755 1.688-1.538 1.118l-3.976-2.888a1 1 0 00-1.176 0l-3.976 2.888c-.783.57-1.838-.197-1.538-1.118l1.518-4.674a1 1 0 00-.363-1.118l-3.976-2.888c-.784-.57-.38-1.81.588-1.81h4.914a1 1 0 00.951-.69l1.519-4.674z" />
-                    </svg>
-                </span>
-                Favorites
-            </div>
-            <div class="pl-3 pr-3 p-3">
-            </div>
-        </div>
-        <div class="shadow-md bg-base-200 text-base-content bg-neutral text-neutral-content">
-            <div class="bg-base-100 p-2 align-bottom mb-2">
-                <span class="align-middle inline-block p-0">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
-                    </svg>
-                </span>
-                Gallery Connection
-            </div>
-            <div class="pl-3 pr-3 p-3">
-            </div>
-        </div>
-        <div class="shadow-md bg-base-200  bg-neutral text-neutral-content">
-            <div class="shadow-md bg-base-200 text-base-content bg-neutral text-neutral-content">
-                <div class="bg-base-100 p-2 align-bottom mb-4">
-                    <span class="align-middle inline-block p-0">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 " fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zm0 0h12a2 2 0 002-2v-4a2 2 0 00-2-2h-2.343M11 7.343l1.657-1.657a2 2 0 012.828 0l2.829 2.829a2 2 0 010 2.828l-8.486 8.485M7 17h.01" />
-                        </svg>
-                    </span>
-                    Themes
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-
-<SurveyPrompt Title="How is Blazor working for you?" />
+  

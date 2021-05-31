@@ -13,7 +13,7 @@ namespace Chameleon.Client.Pages.Components.Settings
         [Inject]
         private HttpClient Http { get; set; }
 
-        public List<Machine> Machines { get; set; } = new List<Machine>();
+        public List<Machine> Machines { get; set; } = new();
 
         protected override async Task OnInitializedAsync()
         {
@@ -29,6 +29,9 @@ namespace Chameleon.Client.Pages.Components.Settings
         {
             currentIndex = GetIndex(item);
             Console.WriteLine($"DragStart for {item.Id} index {currentIndex}");
+
+
+            
         }
 
         private void ClickItem(Machine item)
@@ -46,7 +49,7 @@ namespace Chameleon.Client.Pages.Components.Settings
             if (item != null)
             {
                 Console.WriteLine($"Drop item {item.Name} ({item.Id})");
-                var index = GetIndex(item);
+                int index = GetIndex(item);
                 Console.WriteLine($"Drop index is {index}, move from {currentIndex}");
                 // get current item
                 var current = Machines[currentIndex];
