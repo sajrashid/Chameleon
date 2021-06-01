@@ -9,7 +9,7 @@ namespace Chameleon.Client.Pages.Components.Main
     public partial class MConsole
     {
         private bool expandedCss { get; set; } = true;
-        private bool expandedPopupCss { get; set; } = true;
+        private bool expandedPopupCss { get; set; } = false;
         private string fColorcss { get; set; } = "text-white";
         private string bkGrndcss { get; set; } = "bg-black";
         public ConsoleSelect ConsoleSelect { get; set; } = new();
