@@ -14,10 +14,10 @@ namespace Chameleon.Client.Pages
         {
             new DyamicComp(0, typeof(Connect)),
             new DyamicComp(1, typeof(Control)),
-            new DyamicComp(2, typeof(PConsole)),
-            new DyamicComp(3, typeof(Chart)),
+            new DyamicComp(2, typeof(MConsole)),
+            new DyamicComp(3, typeof(Thermals)),
             new DyamicComp(4, typeof(Macros)),
-            new DyamicComp(5, typeof(Speeds)),
+            new DyamicComp(5, typeof(Tune)),
         };
         private  int count = 0;
         private string dropClass = "";

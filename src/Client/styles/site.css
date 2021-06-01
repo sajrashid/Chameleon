@@ -78,3 +78,15 @@ div .validation-errors {
 .login input {
     padding: 0 3.6em;
 }
+
+.expandPanel {
+  
+    max-height: 20em !important;
+   
+}
+
+.shrunkPanel {
+    max-height: 0;
+    overflow: hidden;
+    transition: .2s ease-out;
+}

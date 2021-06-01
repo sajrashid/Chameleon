@@ -1,0 +1,58 @@
+﻿.mconsole {
+    width: 100%;
+    height: 12em;
+    overflow: scroll;
+}
+    .mconsole::-webkit-scrollbar {
+        width: 1em;
+    }
+
+   
+    .mconsole::-webkit-scrollbar-thumb {
+        border-radius: 0.3em;
+        background: currentColor;
+        box-shadow: inset 0 0 0.3em rgba(0,0,0,0.5);
+    }
+
+    .mconsole::-webkit-scrollbar-corner {
+        background: rgba(0,0,0,0);
+    }
+
+.FGreen {
+     color:limegreen;
+}
+.FYellow {
+    color: yellow;
+}
+.FRed {
+    color: red;
+}
+.FIndigo {
+     color:indigo;
+}
+
+.BGreen {
+    background-color: #03A062;
+}
+.BYellow {
+    background-color: yellow;
+}
+.BRed {
+    background-color: red;
+}
+.BIndigo {
+    background-color: indigo;
+}
+
+.shrunkPopup {
+    max-height: 0;
+    padding: 0;
+    overflow: hidden;
+}
+
+.expandPopup {
+    max-height: 12em !important;
+    padding-top: 1em;
+    padding-bottom: 1em;
+    padding-left: 1em;
+}

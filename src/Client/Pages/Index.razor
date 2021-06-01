@@ -1,57 +1,46 @@
 ﻿@page "/"
-<div ondragover="event.preventDefault();">
+<div class="h-full" ondragover="event.preventDefault();">
    @if (ListComp != null){
        {
             var c=0;
             var b = 0;
-            <div class="w-full">
-             <div class="lg:w-2/4 w-full pl-4 pr-2 pt-4 float-left">
+            <div class="w-full h-full">
+             <div class="lg:w-2/4 w-full pl-4 pr-2 pt-4 float-left h-full">
                @foreach (var item in ListComp)
-                {
-               
-                     
-                    @if (c < 3)
                     {
-                    
-                       
-                             <div id="@item.Id"  @key="@item.Id"  draggable="true" class="@dropClass @item.DropEnterCss shadow-md bg-base-200 mb-4"
-                                  @ontouchleave="@(()=> DragLeave(item))"  @ondragleave="@(()=> DragLeave(item))"
-                                  
-                                  @ontouchenter="@(()=> DragEnter(item))"  @ondragenter="@(()=> DragEnter(item))"
-                                  
-                                  @ontouchstart="@(()=> StartDrag(item))" @ondrag="@(()=> StartDrag(item))"
-                                  
-                                  @ontouchend="@(()=> Drop(item))"    @ondrop="@(()=> Drop(item))" >
-                                 <DynamicComponent Type="@item.MyComp" />
-                            </div>
+                        @if (c < 3)
+                        {
+                                 <div id="@item.Id"  @key="@item.Id"  draggable="true" class="@dropClass @item.DropEnterCss shadow-md bg-base-200 mb-4 mb-2"
+                                      @ontouchleave="@(()=> DragLeave(item))"  @ondragleave="@(()=> DragLeave(item))"
+                                      @ontouchenter="@(()=> DragEnter(item))"  @ondragenter="@(()=> DragEnter(item))"
+                                      @ontouchmove="@(()=> StartDrag(item))" @ondrag="@(()=> StartDrag(item))"
+                                      @ontouchend="@(()=> Drop(item))"    @ondrop="@(()=> Drop(item))" >
+                                    
+                                      <DynamicComponent Type="@item.MyComp" />
+                                </div>
                             
+                        }
+                             c++; 
                     }
-                        c++; 
-              }
               </div>
             
-             <div class="lg:w-2/4 w-full pl-4 pr-2 pt-4 float-left">
+             <div class="lg:w-2/4 w-full pl-4 pr-2 pt-4 float-left h-full">
                 @foreach (var item in ListComp)
                 {
-                     
                     @if (b >2)
                     {
-                    
-           
-                             
-                                  <div id="@item.Id"  @key="@item.Id"  draggable="true" class="@dropClass @item.DropEnterCss shadow-md bg-base-200 mb-4"
+                                  <div id="@item.Id"  @key="@item.Id"  draggable="true" class="@dropClass @item.DropEnterCss shadow-md bg-base-200 mb-4 h-48 mb-2"
                                         @ondragleave="@(()=> DragLeave(item))"  @ondragenter="@(()=> DragEnter(item))" @ondrop="@(()=> Drop(item))" @ondrag="@(()=> StartDrag(item))">
                                         <DynamicComponent Type="@item.MyComp" />
          
                                    </div>
                            
-                              
                     }
                      b++;
-               }
-               </div>
+                }
+             </div>
         </div>
-               }
+       }
    }
  </div>
 
