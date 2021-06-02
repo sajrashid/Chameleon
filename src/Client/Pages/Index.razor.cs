@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace Chameleon.Client.Pages
 {
-    public partial class Index
+    public partial class Index 
     {
         public List<DyamicComp> ListComp { get; set; } = new()
         {
@@ -30,8 +30,10 @@ namespace Chameleon.Client.Pages
             return ListComp.FindIndex(a => a.Id == item.Id);
         }
 
-        private void StartDrag(DyamicComp item)
+        protected  void StartDrag(DyamicComp item)
         {
+           // if (item.Id == 2) { return; } //trying to cancel drag not happening here
+
             item.DropEnterCss = "start-drag";
             currentIndex = GetIndex(item);
             Console.WriteLine($"DragStart for {item.Id} index {currentIndex}");

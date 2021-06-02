@@ -29,6 +29,10 @@
         window.setLs = (name, value) => {
             return localStorage.setItem(name, value);
         }
+        window.scrollToEnd = (textarea) => {
+             textarea.scrollTop = textarea.scrollHeight;;
+        }
+        
     </script>
     <script type="module"
             src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
