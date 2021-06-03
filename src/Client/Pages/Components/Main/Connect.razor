@@ -1,41 +1,31 @@
 ﻿ <div class="shadow-md bg-base-200">
             <div class="bg-base-200 text-base-content bg-neutral text-neutral-content">
-                 <div class="shadow-md bg-base-300 align-bottom  h-12 text-lg cursor-pointer"  @onclick="expandClick">
+                 <div class="shadow-md bg-base-300 align-bottom  h-12 text-lg cursor-pointer">
                 
                      <span class="align-middle inline-block p-2 pl-3">
-                         <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                         
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
                          </svg>
+
                     </span>
                         <span class="align-middle inline-block">Connect</span>
-                    <span class="align-middle inline-block p-2 pr-3 float-right" >
-                      <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
-                    </span>
+                <span @onclick="ExpandClick" class="@(( RotateCss ? "transform rotate-180" :"") + " transition ease-out duration-200 align-middle inline-block p-2 pr-3 float-right")" >
+                          <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                 </span>
                  </div>
-                  <div class="@(( expandedCss ? "expandPanel" : "") + " shrunkPanel pl-3 pr-3 pb-1")">
-                                    .......
-                                    <br />
-                                       .......
-                                    <br />
-                                       .......
-                                    <br />
-                                       .......
-                                    <br />
-                                       .......
-                                    <br />
-                                       .......
-                                    <br />
-                                       .......
-                                    <br />
+                  <div  class="@(( ExpandedCss ? "expandPanel" : "") + " shrunkPanel pl-3 pr-3 pb-1")">
+                         <div class="p-1 mt-2 mb-1 mainpanel"></div>       
                   </div>
             </div>
         </div>
 
 @code {
-    private bool expandedCss { get; set; } = true;
-
-    private void expandClick()
+    private bool ExpandedCss { get; set; } = true;
+       private bool RotateCss { get; set; } = false;
+    private void ExpandClick()
     {
-        expandedCss = !expandedCss;
+        ExpandedCss = !ExpandedCss;
+        RotateCss = !RotateCss;
     }
 }

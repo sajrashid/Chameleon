@@ -93,3 +93,9 @@ div .validation-errors {
     overflow: hidden;
     transition: .2s ease-out;
 }
+
+.mainpanel {
+    width: 100%;
+    min-height: 15em;
+}
+  

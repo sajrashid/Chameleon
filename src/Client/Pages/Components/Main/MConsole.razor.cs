@@ -12,37 +12,41 @@ namespace Chameleon.Client.Pages.Components.Main
     {
         [Inject]
         private IJSRuntime JS { get; set; }
-        private bool expandedCss { get; set; } = true;
-        private bool expandedPopupCss { get; set; } = false;
-        private string fColorcss { get; set; } = "text-white";
-        private string bkGrndcss { get; set; } = "bg-black";
+      
         public ConsoleSelect ConsoleSelect { get; set; } = new();
 
-        private string GcodeInput { get; set; } = "";
-        ElementReference TextAreaRef;
-        private string GcodeTextArea { get; set; } = "";
-        private void expandClick()
+        private bool ExpandedCss { get; set; } = true;
+        private bool RotateCss { get; set; } = false;
+
+        private void ExpandClick()
         {
-            expandedCss = !expandedCss;
+            ExpandedCss = !ExpandedCss;
+            RotateCss = !RotateCss;
         }
-    
+        private bool ExpandedPopupCss { get; set; } = false;
+
         private void TogglePopup()
         {
-            expandedPopupCss = !expandedPopupCss;
+            ExpandedPopupCss = !ExpandedPopupCss;
         }
-        
+        private string FColorcss { get; set; } = "text-white";
+
         private async Task SelectFColorClick(ChangeEventArgs e)
         {
-            fColorcss= e.Value.ToString();
+            FColorcss= e.Value.ToString();
             await InvokeAsync(StateHasChanged);
         }
 
-      
+        private string BkGrndcss { get; set; } = "bg-black";
         private async Task SelectBColorClick(ChangeEventArgs e)
         {
-            bkGrndcss = e.Value.ToString();
+            BkGrndcss = e.Value.ToString();
             await InvokeAsync(StateHasChanged);
         }
+
+
+        private string GcodeTextArea { get; set; } = "";
+        private string GcodeInput { get; set; } = "";
 
         private async Task OnGcodeSendClick()
         {
@@ -54,8 +58,8 @@ namespace Chameleon.Client.Pages.Components.Main
                 await AutoScrollTextArea();
             }
         }
+
         string KeyPressed = "";
-       
         private async Task KeyboardEventHandler(KeyboardEventArgs args)
         {
             
@@ -70,6 +74,7 @@ namespace Chameleon.Client.Pages.Components.Main
           
         }
 
+        ElementReference TextAreaRef;
         private async Task AutoScrollTextArea()
         {
             await JS.InvokeAsync<object>
@@ -78,8 +83,6 @@ namespace Chameleon.Client.Pages.Components.Main
     }
     public  class ConsoleSelect
     {
-       
-
         public List<Colour> BColorList { get; set; } = new()
         {
             new Colour("bg-white", "White"),
