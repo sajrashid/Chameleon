@@ -13,7 +13,7 @@ namespace Chameleon.Client.Pages
         public List<DyamicComp> ListComp { get; set; } = new()
         {
             new DyamicComp(0, typeof(Connect)),
-            new DyamicComp(1, typeof(Control)),
+            new DyamicComp(1, typeof(MControl)),
             new DyamicComp(2, typeof(MConsole)),
             new DyamicComp(3, typeof(Thermals)),
             new DyamicComp(4, typeof(Macros)),
