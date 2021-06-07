@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-
-namespace Chameleon.Client.Pages.Components.Main
+﻿namespace Chameleon.Client.Pages.Components.Main
 {
     public partial class MControl
     {

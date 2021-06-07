@@ -1,4 +1,5 @@
 using Chameleon.Server.DBContext;
+using Chameleon.Server.Services;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
@@ -9,6 +10,11 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.FileProviders;
 using Microsoft.Extensions.Hosting;
 using System.IO;
+using System.Net.Http;
+using Serilog;
+using System;
+using Microsoft.Extensions.Logging;
+using Microsoft.Extensions.Options;
 
 namespace Chameleon.Server
 {
@@ -26,6 +32,8 @@ namespace Chameleon.Server
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddDbContext<SQLiteDBContext>();
+            services.AddTransient<HttpClient>();
+            services.AddSingleton<RestService>();
             services.AddControllersWithViews();
             services.AddDirectoryBrowser();
             services.AddRazorPages();
@@ -84,6 +92,14 @@ namespace Chameleon.Server
                     Path.Combine(env.WebRootPath, "images")),
                 RequestPath = "/models"
             });
+        //    LoggerFactory.AddFile(Configuration.GetSection("Logging"));
+            
+              var startTime = DateTimeOffset.UtcNow;
+
+            Log.Logger.Information("Started at {StartTime} and 0x{Hello:X} is hex of 42", startTime, 42);
+            // Write streamlined request completion events, instead of the more verbose ones from the framework.
+            // To use the default framework request logging instead, remove this line and set the "Microsoft"
+            // level in appsettings.json to "Information".
 
             app.UseRouting();
 

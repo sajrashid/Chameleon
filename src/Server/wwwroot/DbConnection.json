@@ -1,0 +1,10 @@
+{
+  "StorageOptions": {
+    "Name": "Local",
+    "ConnStr": ""
+  },
+  "GalleryOptions": {
+    "Name": "Local",
+    "APIURL": ""
+  }
+}

@@ -1,0 +1,14 @@
+﻿.moveButton {
+    max-height: 3em !important;
+    border-radius: 0.2em !important;
+    min-height: 3em !important;
+}
+.moveButton {
+    vertical-align: middle;
+}
+
+.btm {
+    position: relative;
+    margin-top: 2.2em;
+    bottom: 0.5em;
+}

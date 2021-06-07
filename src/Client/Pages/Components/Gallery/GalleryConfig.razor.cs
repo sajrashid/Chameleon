@@ -1,10 +1,7 @@
 ﻿namespace Chameleon.Client.Pages.Components.Gallery
 {
-    using Chameleon.Shared;
-    using Microsoft.AspNetCore.Components;
-    using System.Net.Http;
-    using System.Net.Http.Json;
-    using System.Threading.Tasks;
+
+   
 
     public partial class GalleryConfig
     {

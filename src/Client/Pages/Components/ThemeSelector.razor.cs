@@ -1,5 +1,4 @@
-﻿using System.Collections.Generic;
-
+﻿
 namespace Chameleon.Client.Pages.Components
 {
     public class Themes

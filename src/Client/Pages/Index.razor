@@ -29,7 +29,7 @@
                 {
                     @if (b >2)
                     {
-                                  <div id="@item.Id"  @key="@item.Id"  draggable="true" class="@dropClass @item.DropEnterCss shadow-md bg-base-200 mb-4 h-48 mb-2"
+                                  <div id="@item.Id"  @key="@item.Id"  draggable="true" class="@dropClass @item.DropEnterCss shadow-md bg-base-200 mb-4 mb-2"
                                         @ondragleave="@(()=> DragLeave(item))"  @ondragenter="@(()=> DragEnter(item))" @ondrop="@(()=> Drop(item))" @ondrag="@(()=> StartDrag(item))">
                                         <DynamicComponent Type="@item.MyComp" />
          

@@ -15,46 +15,15 @@
             </span>
         </div>
         <div class="@(( ExpandedCss ? "expandPanel" : "") + " shrunkPanel pl-3 pr-3 pb-1")">
-            <div class="p-1 mt-2 mb-1 mainpanel">
-                <div class="w-fullrelative bg-base-100">
-           
-                    
-                        <button class="btn btn-accent controlbtn">
-                            <span class="pr-2 tracking-widest">ALL</span>
-                            <div class="h-4">
-                                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
-                                </svg>
-                            </div>
-                        </button>
-
-                        <button class="btn controlbtn">
-                            <span class="pr-2 tracking-widest">X</span>
-                            <div class="h-4">
-                                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
-                                </svg>
-                            </div>
-                        </button>
-
-                        <button class="btn controlbtn">
-                            <span class="pr-2 tracking-widest">Y</span>
-                            <div class="h-4">
-                                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
-                                </svg>
-                            </div>
-                        </button>
-
-                        <button class="btn controlbtn">
-                            <span class="pr-2 tracking-widest">Z</span>
-                            <div class="h-4">
-                                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
-                                </svg>
-                            </div>
-                        </button>
-                  
+            <div class="p-1 mt-2 mb-1 max-w-7xl mainpanel">
+                <div class="md:w-2/3 lg:w-2/3 p-2  w-full float-left">
+                    <div class="grid grid-cols-4 gap-4  ">
+                             <HomeButtons/>
+                             <MoveButtons/>
+                    </div>
+                </div>
+                <div class="md:w-2/3 lg:w-1/3 p-2  w-full float-left">
+                    side
                 </div>
             </div>
         </div>

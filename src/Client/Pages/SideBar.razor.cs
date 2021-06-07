@@ -1,5 +1,4 @@
-﻿using Microsoft.AspNetCore.Components.Web;
-
+﻿
 namespace Chameleon.Client.Pages
 {
     public partial class SideBar

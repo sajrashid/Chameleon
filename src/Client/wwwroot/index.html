@@ -11,14 +11,14 @@
 </head>
 
 <body class="min-h-screen bg-base-100 h-full text-base-content;">
-    <div  class="min-h-screen" id="app">Loading...</div>
+    <div class="min-h-screen" id="app">Loading...</div>
 
     <div id="blazor-error-ui">
         An unhandled error has occurred.
         <a href="" class="reload">Reload</a>
         <a class="dismiss">🗙</a>
     </div>
-    <script>
+    <script type="text/javascript">
         window.changeTheme = (selectedTheme) => {
             var selector = document.getElementsByTagName('html')[0];
             selector.setAttribute('data-theme', selectedTheme);
@@ -30,10 +30,14 @@
             return localStorage.setItem(name, value);
         }
         window.scrollToEnd = (textarea) => {
-             textarea.scrollTop = textarea.scrollHeight;;
+            textarea.scrollTop = textarea.scrollHeight;;
         }
-        
+
+
     </script>
+
+    <script src="https://lib.baomitu.com/echarts/5.0.2/echarts.min.js"></script>
+    <script type="module" src="_content/Blazor.ECharts/core.js"></script>
     <script type="module"
             src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
     <script nomodule src="https://unpkg.com/@google/model-viewer/dist/model-viewer-legacy.js"></script>

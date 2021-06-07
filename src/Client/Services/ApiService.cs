@@ -1,10 +1,5 @@
 ﻿namespace Chameleon.Client.Services
 {
-    using System;
-    using System.Net.Http;
-    using System.Text.Json;
-    using System.Threading.Tasks;
-
     public class ApiService<T> : IApiService<T> where T : class
     {
         private readonly HttpClient _clientFactory;
