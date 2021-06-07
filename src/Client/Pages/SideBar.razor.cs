@@ -1,5 +1,4 @@
-﻿
-namespace Chameleon.Client.Pages
+﻿namespace Chameleon.Client.Pages
 {
     public partial class SideBar
     {

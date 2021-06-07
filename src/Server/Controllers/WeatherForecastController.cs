@@ -1,6 +1,4 @@
-﻿
-
-namespace Chameleon.Server.Controllers
+﻿namespace Chameleon.Server.Controllers
 {
     [ApiController]
     [Route("[controller]")]

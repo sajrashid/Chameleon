@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.ComponentModel.DataAnnotations;
 
 namespace Chameleon.Shared
 {
@@ -19,6 +14,7 @@ namespace Chameleon.Shared
 
         [Required]
         public string Src { get; set; }
+
         [Required]
         public string Alt { get; set; }
 

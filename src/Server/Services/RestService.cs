@@ -1,6 +1,4 @@
-﻿
-
-namespace Chameleon.Server.Services
+﻿namespace Chameleon.Server.Services
 {
     public class RestService
     {
@@ -10,7 +8,6 @@ namespace Chameleon.Server.Services
         {
             _client = client;
         }
-
 
         public async Task<HttpResponseMessage> Get(string Url)
         {
@@ -31,7 +28,6 @@ namespace Chameleon.Server.Services
                 response.StatusCode = HttpStatusCode.GatewayTimeout;
                 return response;
             }
-
         }
     }
 }

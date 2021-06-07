@@ -2,7 +2,7 @@
 
 namespace Chameleon.Shared
 {
-    public class UserCredentialsChangePassword: UserCredentials
+    public class UserCredentialsChangePassword : UserCredentials
     {
         [Required]
         [MinLength(6, ErrorMessage = "New Password nust be a minimum of 6 characters!")]
@@ -11,7 +11,6 @@ namespace Chameleon.Shared
 
     public class UserCredentials
     {
-
         [Required(ErrorMessage = "The email address is required")]
         [EmailAddress(ErrorMessage = "Invalid Email Address")]
         public string Email { get; set; }
@@ -19,8 +18,5 @@ namespace Chameleon.Shared
         [Required]
         [MinLength(6, ErrorMessage = "Password nust be a minimum of 6 characters!")]
         public string Password { get; set; }
-     
-
-
     }
 }

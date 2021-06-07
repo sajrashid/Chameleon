@@ -1,8 +1,4 @@
-﻿
-
-
-
-namespace Chameleon.Client.Pages.Login
+﻿namespace Chameleon.Client.Pages.Login
 {
     public partial class UserComp
     {
@@ -17,9 +13,6 @@ namespace Chameleon.Client.Pages.Login
         private string ApiResponseMessage { get; set; } = "";
         private bool IsPasswordEyeOpen { get; set; } = true;
 
-        
-
-
         public void ShowPassword()
         {
             IsPasswordEyeOpen = !IsPasswordEyeOpen;
@@ -30,7 +23,6 @@ namespace Chameleon.Client.Pages.Login
             else
             {
                 this.TxtType = "password";
-                
             }
         }
 
@@ -38,7 +30,7 @@ namespace Chameleon.Client.Pages.Login
         {
             var password = UserCreds.Password;
             var Email = UserCreds.Email;
-            if (IsValidEmail(Email)  && password.Length > 7)
+            if (IsValidEmail(Email) && password.Length > 7)
             {
                 IsCredsValid = await Http.GetFromJsonAsync<bool>("api/login/" + UserCreds.Email + "?password=" + password);
                 Console.WriteLine(UserCreds.Email + " :" + UserCreds.Password);
@@ -47,7 +39,7 @@ namespace Chameleon.Client.Pages.Login
             //save password hash in DB
         }
 
-        bool IsValidEmail(string email)
+        private bool IsValidEmail(string email)
         {
             try
             {
@@ -63,19 +55,16 @@ namespace Chameleon.Client.Pages.Login
 
     public class UserOptions
     {
-       public string Title { get; set; }
-       public string Link1Title { get; set; }
-       public string Link1Text { get; set; }
-       public string Link1Href { get; set; }
+        public string Title { get; set; }
+        public string Link1Title { get; set; }
+        public string Link1Text { get; set; }
+        public string Link1Href { get; set; }
 
-       public string Link2Title { get; set; }
+        public string Link2Title { get; set; }
 
-       public string Link2Text { get; set; }
-       public string Link2Href { get; set; }
+        public string Link2Text { get; set; }
+        public string Link2Href { get; set; }
 
-       public string ApiUrl { get; set; }
-
+        public string ApiUrl { get; set; }
     }
-
-
 }

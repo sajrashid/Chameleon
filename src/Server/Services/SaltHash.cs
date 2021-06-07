@@ -1,6 +1,4 @@
-﻿
-
-namespace MainAPI.Services
+﻿namespace MainAPI.Services
 {
     public class SecurityHelper
     {

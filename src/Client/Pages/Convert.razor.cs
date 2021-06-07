@@ -90,6 +90,7 @@
             public string Name { get; set; }
         }
     }
+
     public class UploadResult
     {
         public bool Uploaded { get; set; }

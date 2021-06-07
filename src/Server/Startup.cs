@@ -27,9 +27,6 @@ namespace Chameleon.Server
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
-          
-
-
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
@@ -58,8 +55,6 @@ namespace Chameleon.Server
             provider.Mappings[".gltf"] = "model/gltf+json";
             provider.Mappings[".glb"] = "model/gltf-binary";
             provider.Mappings[".image"] = "image/png";
-            // using Microsoft.Extensions.FileProviders;
-            // using System.IO;
             app.UseStaticFiles(new StaticFileOptions
             {
                 FileProvider = new PhysicalFileProvider(
@@ -74,14 +69,9 @@ namespace Chameleon.Server
                     Path.Combine(env.WebRootPath, "images")),
                 RequestPath = "/models"
             });
-        //    LoggerFactory.AddFile(Configuration.GetSection("Logging"));
-            
-              var startTime = DateTimeOffset.UtcNow;
 
+            var startTime = DateTimeOffset.UtcNow;
             Log.Logger.Information("Started at {StartTime} and 0x{Hello:X} is hex of 42", startTime, 42);
-            // Write streamlined request completion events, instead of the more verbose ones from the framework.
-            // To use the default framework request logging instead, remove this line and set the "Microsoft"
-            // level in appsettings.json to "Information".
 
             app.UseRouting();
 

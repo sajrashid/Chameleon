@@ -1,5 +1,4 @@
-﻿
-namespace Chameleon.Client.Pages.Components.Main.ChildComponents
+﻿namespace Chameleon.Client.Pages.Components.Main.ChildComponents
 {
     public partial class HomeButtons
     {

@@ -4,12 +4,11 @@
     {
         private bool ExpandedCss { get; set; } = true;
         private bool RotateCss { get; set; } = false;
+
         private void ExpandClick()
         {
             ExpandedCss = !ExpandedCss;
             RotateCss = !RotateCss;
         }
-
-
     }
 }

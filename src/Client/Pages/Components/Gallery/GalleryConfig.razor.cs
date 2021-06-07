@@ -1,8 +1,5 @@
 ﻿namespace Chameleon.Client.Pages.Components.Gallery
 {
-
-   
-
     public partial class GalleryConfig
     {
         [Inject]

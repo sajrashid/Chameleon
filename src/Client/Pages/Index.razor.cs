@@ -1,14 +1,8 @@
 ﻿using Chameleon.Client.Pages.Components.Main;
-using Microsoft.AspNetCore.Components;
-using System;
-using System.Collections.Generic;
-using System.Net.Http;
-using System.Net.Http.Json;
-using System.Threading.Tasks;
 
 namespace Chameleon.Client.Pages
 {
-    public partial class Index 
+    public partial class Index
     {
         public List<DyamicComp> ListComp { get; set; } = new()
         {
@@ -19,25 +13,27 @@ namespace Chameleon.Client.Pages
             new DyamicComp(4, typeof(Macros)),
             new DyamicComp(5, typeof(Tune)),
         };
-        private  int count = 0;
+
+        private int count = 0;
         private string dropClass = "";
 
         private int currentIndex;
 
         private int GetIndex(DyamicComp item)
         {
-            Console.WriteLine("myid:"+ item.Id);
+            Console.WriteLine("myid:" + item.Id);
             return ListComp.FindIndex(a => a.Id == item.Id);
         }
 
-        protected  void StartDrag(DyamicComp item)
+        protected void StartDrag(DyamicComp item)
         {
-           // if (item.Id == 2) { return; } //trying to cancel drag not happening here
+            // if (item.Id == 2) { return; } //trying to cancel drag not happening here
 
             item.DropEnterCss = "start-drag";
             currentIndex = GetIndex(item);
             Console.WriteLine($"DragStart for {item.Id} index {currentIndex}");
         }
+
         private void DragEnter(DyamicComp item)
         {
             item.DropEnterCss = "drag-enter";
@@ -47,6 +43,7 @@ namespace Chameleon.Client.Pages
         {
             item.DropEnterCss = "";
         }
+
         private void Drop(DyamicComp item)
         {
             item.DropEnterCss = "";
@@ -81,6 +78,7 @@ namespace Chameleon.Client.Pages
             MyComp = comp;
             DropEnterCss = string.Empty;
         }
+
         public int Id { get; set; }
 
         public Type MyComp { get; set; }

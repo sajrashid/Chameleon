@@ -1,16 +1,13 @@
-﻿
-
-
-namespace Chameleon.Server.Repository
+﻿namespace Chameleon.Server.Repository
 {
     public class OrdersRepository : SqlRepository<Machine>, IOrdersRepository
     {
         private readonly SQLiteDBContext _context;
-        public OrdersRepository(SQLiteDBContext _context )
+
+        public OrdersRepository(SQLiteDBContext _context)
              : base(_context)
         {
         }
-
 
         public override IQueryable<Machine> GetAll()
         {
@@ -58,8 +55,11 @@ namespace Chameleon.Server.Repository
     public interface IOrdersRepository
     {
         Task Insert(Machine machine);
+
         Task Update(Machine machine);
+
         void Delete(Machine machine);
+
         void Save();
     }
 }

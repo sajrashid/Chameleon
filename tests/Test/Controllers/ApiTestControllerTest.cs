@@ -1,11 +1,14 @@
-using Chameleon.Shared;
-using Microsoft.AspNetCore.Mvc.Testing;
-using Chameleon.Server;
 using System;
-using System.Threading.Tasks;
-using Xunit;
 using System.Text.Json;
-using System.Collections.Generic;
+using System.Threading.Tasks;
+
+using Chameleon.Server;
+using Chameleon.Shared;
+
+using Microsoft.AspNetCore.Mvc.Testing;
+
+using Xunit;
+
 namespace Test
 {
     public class ApiTestControllerTest
@@ -17,6 +20,7 @@ namespace Test
         {
             _factory = factory;
         }
+
         [Theory]
         [InlineData("/api/apitest")]
         public async Task Get_EndpointsReturnSuccessAndCorrectContentType(string url)

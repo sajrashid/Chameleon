@@ -1,5 +1,4 @@
-﻿
-namespace Chameleon.Server.DBContext
+﻿namespace Chameleon.Server.DBContext
 {
     public class SQLiteDBContext : DbContext
     {
@@ -7,7 +6,6 @@ namespace Chameleon.Server.DBContext
            : base(options)
         {
         }
-
 
         public DbSet<Machine> Machines { get; set; }
 
@@ -17,7 +15,6 @@ namespace Chameleon.Server.DBContext
         public DbSet<AppUser> AppUser { get; set; }
 
         public DbSet<GlbModel> GlbModel { get; set; }
-
 
         #region Required
 

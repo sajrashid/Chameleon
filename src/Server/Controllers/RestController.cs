@@ -4,7 +4,7 @@
     [ApiController]
     public class RestController : ControllerBase
     {
-        readonly ILogger<RestController> _logger;
+        private readonly ILogger<RestController> _logger;
         private readonly RestService _restService;
 
         public RestController(ILogger<RestController> logger, RestService restService)
@@ -12,9 +12,6 @@
             _restService = restService;
             _logger = logger;
         }
-
-
-
 
         // GET: api/<httpController>
         [HttpGet]
@@ -24,7 +21,6 @@
             string url = "http://192.168.0.69/printer/info";
             var response = await _restService.Get(url);
             return response;
-
         }
 
         // GET api/<httpController>/5

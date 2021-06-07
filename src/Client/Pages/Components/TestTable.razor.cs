@@ -1,7 +1,4 @@
-﻿
-
-
-namespace Chameleon.Client.Pages.Components
+﻿namespace Chameleon.Client.Pages.Components
 {
     public partial class TestTable
     {
@@ -14,7 +11,7 @@ namespace Chameleon.Client.Pages.Components
         private List<string> propertiesValues;
         private List<string> focusedRowProperties;
 
-        protected  void SetProps<T>(List<T> List)
+        protected void SetProps<T>(List<T> List)
         {
             properties = new();
             propertiesValues = new();
@@ -31,12 +28,8 @@ namespace Chameleon.Client.Pages.Components
             SetProps<AppUser>(ListUsers);
         }
 
-
         private void HandleValidSubmit()
         {
-           
         }
     }
-
-  
 }

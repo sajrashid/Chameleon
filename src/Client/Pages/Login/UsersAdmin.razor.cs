@@ -1,12 +1,11 @@
-﻿
-namespace Chameleon.Client.Pages.Login
+﻿namespace Chameleon.Client.Pages.Login
 {
     public partial class UsersAdmin
     {
         [Inject]
         private HttpClient Http { get; set; }
 
-        List<AppUser> ListModel;
+        private List<AppUser> ListModel;
 
         protected override async Task OnParametersSetAsync()
         {
@@ -18,6 +17,4 @@ namespace Chameleon.Client.Pages.Login
             Console.WriteLine(users.Email);
         }
     }
-
-  
 }

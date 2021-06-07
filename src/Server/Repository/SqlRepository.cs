@@ -20,6 +20,6 @@
 
         public abstract Task<T> GetById(object id);
 
-        #endregion
+        #endregion IRepository<T> Members
     }
 }

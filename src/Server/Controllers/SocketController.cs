@@ -1,6 +1,5 @@
 ﻿namespace Chameleon.Server.Controllers
 {
-
     [Route("api/[controller]")]
     [ApiController]
     public class SocketController : ControllerBase

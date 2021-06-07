@@ -1,4 +1,5 @@
 ﻿using Chameleon.Shared;
+
 using Microsoft.EntityFrameworkCore;
 
 namespace Test
@@ -9,7 +10,6 @@ namespace Test
            : base(options)
         {
         }
-
 
         public DbSet<Machine> Machines { get; set; }
 

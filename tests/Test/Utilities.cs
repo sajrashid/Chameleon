@@ -1,30 +1,31 @@
-﻿using Chameleon.Server.DBContext;
+﻿using System.Collections.Generic;
+
 using Chameleon.Shared;
-using System.Collections.Generic;
 
-namespace Test {
-public static class Utilities
-      {
-            public static void InitializeDbForTests(SQLiteDBContext db)
-            {
-                db.Machines.AddRange(GetSeedingMessages());
-                db.SaveChanges();
-            }
+namespace Test
+{
+    public static class Utilities
+    {
+        public static void InitializeDbForTests(SQLiteDBContext db)
+        {
+            db.Machines.AddRange(GetSeedingMessages());
+            db.SaveChanges();
+        }
 
-             public static void ReinitializeDbForTests(SQLiteDBContext db)
-            {
-                db.Machines.RemoveRange(db.Machines);
-                InitializeDbForTests(db);
-            }
+        public static void ReinitializeDbForTests(SQLiteDBContext db)
+        {
+            db.Machines.RemoveRange(db.Machines);
+            InitializeDbForTests(db);
+        }
 
-            public  static List<Machine> GetSeedingMessages()
-            {
-                return new List<Machine>()
+        public static List<Machine> GetSeedingMessages()
+        {
+            return new List<Machine>()
                 {
                     new Machine(){ Name = "Apples" },
                     new Machine(){ Name = "Oranges" },
                     new Machine(){ Name = "Pears"  }
                 };
-            }
+        }
     }
 }

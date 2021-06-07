@@ -54,7 +54,6 @@ function uploaded(file) {
     check_file(file, function () { check_file_success() });
 
     function check_file_success() {
-
         put_status("Converting by your browser");
 
         var uploadform = document.getElementById("fileuploadform");
@@ -63,7 +62,6 @@ function uploaded(file) {
         fr.readAsDataURL(file);
 
         fr.onload = function () {
-
             console.log(filename);
 
             if (filename === GLOBAL.stl_name) { // user upload the same file as last one
@@ -198,7 +196,6 @@ function gltf_dict(
 }
 
 function download_glb() {
-
     if (GLOBAL.stl_name === undefined) {
         put_status("Please upload a file");
         return;

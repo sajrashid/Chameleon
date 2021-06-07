@@ -1,9 +1,6 @@
-﻿
-namespace Chameleon.Client.Pages.Components.Main
+﻿namespace Chameleon.Client.Pages.Components.Main
 {
     public class MControlButton
     {
-
-      
     }
 }

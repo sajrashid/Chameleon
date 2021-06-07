@@ -1,7 +1,4 @@
-﻿
-
-
-namespace Chameleon.Client.Pages.Components.Settings
+﻿namespace Chameleon.Client.Pages.Components.Settings
 {
     public partial class FavMachines
     {
@@ -24,9 +21,6 @@ namespace Chameleon.Client.Pages.Components.Settings
         {
             currentIndex = GetIndex(item);
             Console.WriteLine($"DragStart for {item.Id} index {currentIndex}");
-
-
-            
         }
 
         private void ClickItem(Machine item)

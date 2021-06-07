@@ -1,12 +1,10 @@
-﻿
-
-namespace Chameleon.Server
+﻿namespace Chameleon.Server
 {
     public class Program
     {
         public static void Main(string[] args)
         {
-            var configuration = new ConfigurationBuilder()
+            _ = new ConfigurationBuilder()
              .SetBasePath(Directory.GetCurrentDirectory())
              .AddJsonFile("appsettings.json", optional: true, reloadOnChange: true)
              .AddEnvironmentVariables()
@@ -15,9 +13,7 @@ namespace Chameleon.Server
         }
 
         public static IHostBuilder CreateHostBuilder(string[] args) =>
-             
 
-          
             Host.CreateDefaultBuilder(args)
             .ConfigureLogging((hostingContext, logging) =>
             {
@@ -30,7 +26,6 @@ namespace Chameleon.Server
 
                 .ConfigureWebHostDefaults(webBuilder =>
                 {
-
                     webBuilder.UseStartup<Startup>();
                 });
     }
