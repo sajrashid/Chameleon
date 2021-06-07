@@ -1,8 +1,4 @@
-﻿using Microsoft.EntityFrameworkCore;
-using System.Linq;
-using System.Threading.Tasks;
-
-namespace Chameleon.Server.Repository
+﻿namespace Chameleon.Server.Repository
 {
     public abstract class SqlRepository<T> : IRepository<T> where T : class
     {

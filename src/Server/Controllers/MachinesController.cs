@@ -1,12 +1,4 @@
-﻿using Chameleon.Server.DBContext;
-using Chameleon.Shared;
-using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-
-namespace Chameleon.Server.Controllers
+﻿namespace Chameleon.Server.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]

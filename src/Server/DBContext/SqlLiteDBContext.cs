@@ -1,6 +1,4 @@
-﻿using Chameleon.Shared;
-using Microsoft.EntityFrameworkCore;
-
+﻿
 namespace Chameleon.Server.DBContext
 {
     public class SQLiteDBContext : DbContext

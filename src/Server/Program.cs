@@ -1,9 +1,4 @@
-﻿using Microsoft.AspNetCore.Hosting;
-using Microsoft.Extensions.Hosting;
-using Microsoft.Extensions.Logging;
-using Microsoft.Extensions.Configuration.Json;
-using System.IO;
-using Microsoft.Extensions.Configuration;
+﻿
 
 namespace Chameleon.Server
 {

@@ -1,21 +1,3 @@
-using Chameleon.Server.DBContext;
-using Chameleon.Server.Services;
-using Microsoft.AspNetCore.Builder;
-using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.StaticFiles;
-using Microsoft.EntityFrameworkCore;
-using Microsoft.Extensions.Configuration;
-using Microsoft.Extensions.DependencyInjection;
-using Microsoft.Extensions.FileProviders;
-using Microsoft.Extensions.Hosting;
-using System.IO;
-using System.Net.Http;
-using Serilog;
-using System;
-using Microsoft.Extensions.Logging;
-using Microsoft.Extensions.Options;
-
 namespace Chameleon.Server
 {
     public class Startup

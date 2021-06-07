@@ -1,12 +1,4 @@
-﻿using Chameleon.Server.DBContext;
-using Microsoft.AspNetCore.Cryptography.KeyDerivation;
-using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
-using System;
-using System.Security.Cryptography;
-using System.Threading.Tasks;
-
-namespace Chameleon.Server.Controllers
+﻿namespace Chameleon.Server.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
@@ -31,7 +23,7 @@ namespace Chameleon.Server.Controllers
             }
 
             // derive a 256-bit subkey (use HMACSHA1 with 10,000 iterations)
-            string hashed = Convert.ToBase64String(KeyDerivation.Pbkdf2(
+            string hashed = System.Convert.ToBase64String(KeyDerivation.Pbkdf2(
                 password: password,
                 salt: salt,
                 prf: KeyDerivationPrf.HMACSHA1,
